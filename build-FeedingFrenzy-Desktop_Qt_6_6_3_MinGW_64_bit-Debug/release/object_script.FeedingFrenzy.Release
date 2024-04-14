@@ -1,0 +1,16 @@
+release/button.o
+release/enemy.o
+release/level.o
+release/levels.o
+release/main.o
+release/mainmenu.o
+release/player.o
+release/seacreature.o
+release/shop.o
+release/view.o
+release/qrc_multimedia.o
+release/moc_button.o
+release/moc_enemy.o
+release/moc_mainmenu.o
+release/moc_player.o
+release/moc_seacreature.o

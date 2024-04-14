@@ -5,18 +5,16 @@
 #include "button.h"
 #include "levels.h"
 #include "view.h"
-class mainmenu:public view
+#include <QTime>
+#include <QObject>
+class mainmenu: public view
 {
+    Q_OBJECT
 public:
     mainmenu(QPixmap background);
     QGraphicsTextItem *text;
     button* levelsButton;
     button* shopButton;
-    void toLevels(levels* l)
-    {
-        l->show();
-        hide();
-    }
 };
 
 #endif // MAINMENU_H

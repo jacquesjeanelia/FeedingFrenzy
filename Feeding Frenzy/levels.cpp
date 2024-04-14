@@ -23,6 +23,4 @@ levels::levels(QPixmap background): view(QPixmap(background)) {
 
     level5Button = new button("LEVEL 5", 350, 200);
     scene->addItem(level5Button);
-
-    this->setScene(scene);
 }

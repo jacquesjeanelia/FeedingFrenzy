@@ -2,7 +2,8 @@
 #include <QGraphicsScene>
 #include<QGraphicsTextItem>
 #include "button.h"
-
+#include "player.h"
+#include "enemy.h"
 
 mainmenu::mainmenu(QPixmap background) :view(QPixmap(background)){
 
@@ -12,10 +13,9 @@ mainmenu::mainmenu(QPixmap background) :view(QPixmap(background)){
     shopButton = new button("SHOP", 650, 300);
     scene->addItem(shopButton);
 
+
+
     this->setScene(scene);
-
-
-
 }
 
 

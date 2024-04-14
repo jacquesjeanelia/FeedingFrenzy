@@ -3,5 +3,7 @@
         <file>mainmenu_image2.jpeg</file>
         <file>mainmenu_image.jpg</file>
         <file>shop_background.png</file>
+        <file>player1.png</file>
+        <file>small fish 1.png</file>
     </qresource>
 </RCC>

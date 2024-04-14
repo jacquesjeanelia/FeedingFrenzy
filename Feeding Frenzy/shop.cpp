@@ -7,6 +7,4 @@ shop::shop(QPixmap background): view(QPixmap(background)) {
     text->setPos((this->width()/2)-(text->boundingRect().width())/2, 100);
     mainButton = new button("MAIN MENU", 50, 50);
     scene->addItem(mainButton);
-
-    this->setScene(scene);
 }
