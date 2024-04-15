@@ -40,12 +40,12 @@ void player::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_Down)
     {
-        if(y() + 50 < 600)
+        if(y() + 75 < 600)
         {setPos(x(),y()+5);}
     }
     else if(event->key() == Qt::Key_Up)
     {
-        if(y() > 000)
+        if(y() > -20)
         {setPos(x(),y()-5);}
     }
 
