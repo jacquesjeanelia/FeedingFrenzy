@@ -45,10 +45,19 @@ void player::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_Up)
     {
-        if(y() > -20)
+        if(y() > -25)
         {setPos(x(),y()-5);}
     }
 
+    QList<QGraphicsItem*> collidingitems = collidingItems();
+    for(int x = 0; x< collidingitems.size(); x++)
+    {
+        if(typeid(*(collidingitems[x])) == typeid(enemy))
+        {
+            scene()->removeItem(collidingitems[x]);
+            delete collidingitems[x];
+        }
+    }
 
 }
 

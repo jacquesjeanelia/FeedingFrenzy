@@ -40,16 +40,6 @@ void enemy::move()
         delete this;
     }
 
-    QList<QGraphicsItem*> collidingitems = collidingItems();
-    for(int x = 0; x< collidingitems.size(); x++)
-    {
-        if(typeid(*(collidingitems[x])) == typeid(player))
-        {
-            scene()->removeItem(this);
-            delete this;
-        }
-    }
-
 }
 
 
