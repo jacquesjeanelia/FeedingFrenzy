@@ -2,6 +2,7 @@
 
 shop::shop(QPixmap background): view(QPixmap(background)) {
 
+    // shop menu
     this->setFixedSize(800,600);
     text = new QGraphicsTextItem("SHOP");
     text->setPos((this->width()/2)-(text->boundingRect().width())/2, 100);

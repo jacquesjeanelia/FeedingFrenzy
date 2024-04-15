@@ -10,7 +10,7 @@ player::player(QPixmap image): seaCreature(image) {
 
 }
 
-
+//keyPress events
 void player::keyPressEvent(QKeyEvent *event)
 {
 
@@ -52,8 +52,10 @@ void player::keyPressEvent(QKeyEvent *event)
 
 }
 
+//create enemy
 void player::createEnemy()
 {
     enemy *Enemy = new enemy(QPixmap(":/new/prefix1/small fish 1.png"));
     scene()->addItem(Enemy);
 }
+

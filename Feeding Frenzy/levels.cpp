@@ -2,6 +2,7 @@
 
 levels::levels(QPixmap background): view(QPixmap(background)) {
 
+    // levels menu
     text = new QGraphicsTextItem("LEVELS");
     text->setPos((this->width()/2)-(text->boundingRect().width())/2, 100);
     scene->addItem(text);

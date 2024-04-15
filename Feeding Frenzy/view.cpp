@@ -1,6 +1,7 @@
 #include "view.h"
 
 view::view(QPixmap background) {
+    //setup the view
     this->setFixedSize(800,600);
     scene = new QGraphicsScene;
     scene->setSceneRect(0,0,800,600);

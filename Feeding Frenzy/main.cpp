@@ -10,6 +10,7 @@ shop *s;
 level* level1;
 int main(int argc, char *argv[])
 {
+    //main menu
     QApplication a(argc, argv);
     m =  new mainmenu(QPixmap(":/new/prefix1/mainmenu_image2.jpeg").scaled(800,600));
     l= new levels(QPixmap(":/new/prefix1/shop_background.png").scaled(800,600));
@@ -18,6 +19,7 @@ int main(int argc, char *argv[])
 
     m->show();
 
+    // connect the buttons
     QObject::connect(m->levelsButton, SIGNAL(clicked()), m, SLOT(hide()));
     QObject::connect(m->levelsButton, SIGNAL(clicked()), l, SLOT(show()));
 

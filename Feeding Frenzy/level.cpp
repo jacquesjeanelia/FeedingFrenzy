@@ -4,7 +4,8 @@
 
 level::level(QPixmap background, double difficulty): view(background) {
 
-    player *p = new player(QPixmap(":/new/prefix1/player1.png").scaled(50,50));
+    // level template
+    player *p = new player(QPixmap(":/new/prefix1/player1.png").scaled(80,90));
     p->setFlag(QGraphicsItem::ItemIsFocusable);
     p->setFocus();
     scene->addItem(p);
