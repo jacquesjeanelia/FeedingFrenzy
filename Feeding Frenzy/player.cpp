@@ -5,9 +5,12 @@
 #include <QDebug>
 #include "enemy.h"
 
-player::player(QPixmap image): seaCreature(image) {
+player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge): seaCreature(mySmall) {
 
-
+    small = mySmall;
+    medium = myMedium;
+    large = myLarge;
+    size = 1;
 }
 
 //keyPress events
@@ -54,8 +57,35 @@ void player::keyPressEvent(QKeyEvent *event)
     {
         if(typeid(*(collidingitems[x])) == typeid(enemy))
         {
+            if(size == 1)
+            {
+                if(flipped)
+                {
+                    setPixmap(medium.scaled(-1,1));
+                    size++;
+                }
+                else
+                {
+                    setPixmap(medium);
+                    size++;
+                }
+            }
+            else if(size == 2)
+            {
+                if(flipped)
+                {
+                    setPixmap(large.scaled(-1,1));
+                    size++;
+                }
+                else
+                {
+                    setPixmap(large);
+                    size++;
+                }
+            }
             scene()->removeItem(collidingitems[x]);
             delete collidingitems[x];
+
         }
     }
 
@@ -64,7 +94,7 @@ void player::keyPressEvent(QKeyEvent *event)
 //create enemy
 void player::createEnemy()
 {
-    enemy *Enemy = new enemy(QPixmap(":/new/prefix1/small fish 1.png"));
+    enemy *Enemy = new enemy(QPixmap(":/new/prefix1/small fish 1.png"), 1);
     scene()->addItem(Enemy);
 }
 

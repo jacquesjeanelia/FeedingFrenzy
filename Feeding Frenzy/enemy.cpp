@@ -2,8 +2,17 @@
 #include <QGraphicsScene>
 #include "player.h"
 
-enemy::enemy(QPixmap image): seaCreature(image) {
+enemy::enemy(QPixmap myImage, int mySize): seaCreature(myImage) {
 
+    size = mySize;
+    if(size == 2)
+    {
+        //setPixmap(image.scaled(x*1.5,y*1.5));
+    }
+    else if(size == 3)
+    {
+        //setPixmap(image.scaled(x*1.5*1.5,y*1.5*1.5));
+    }
     int randomNumber = rand() % 500;
     if(randomNumber % 2 == 0)
     {

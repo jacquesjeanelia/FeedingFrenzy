@@ -145,10 +145,15 @@ compiler_rcc_clean:
 release/qrc_multimedia.cpp: ../Feeding\ Frenzy/multimedia.qrc \
 		C:/Qt/6.6.3/mingw_64/bin/rcc.exe \
 		../Feeding\ Frenzy/player1.png \
+		../Feeding\ Frenzy/player1\ medium.png \
+		../Feeding\ Frenzy/player1\ large.png \
+		../Feeding\ Frenzy/enemy2.png \
 		../Feeding\ Frenzy/mainmenu_image2.jpeg \
 		../Feeding\ Frenzy/small\ fish\ 1.png \
 		../Feeding\ Frenzy/shop_background.png \
-		../Feeding\ Frenzy/mainmenu_image.jpg
+		../Feeding\ Frenzy/mainmenu_image_copy.jpg \
+		../Feeding\ Frenzy/mainmenu_image.jpg \
+		../Feeding\ Frenzy/player1\ small.png
 	C:\Qt\6.6.3\mingw_64\bin\rcc.exe -name multimedia --no-zstd "..\Feeding Frenzy\multimedia.qrc" -o release\qrc_multimedia.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -1364,7 +1369,65 @@ release/enemy.o: ../Feeding\ Frenzy/enemy.cpp ../Feeding\ Frenzy/enemy.h \
 		C:/Qt/6.6.3/mingw_64/include/QtGui/qpainterpath.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qpen.h \
+		../Feeding\ Frenzy/player.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/QKeyEvent \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qevent.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qiodevice.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qpointer.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qurl.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qeventpoint.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qvector2d.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qvectornd.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qpointingdevice.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qinputdevice.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qscreen.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QList \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QRect \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QSize \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QSizeF \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/QTransform \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qkeysequence.h \
+		../Feeding\ Frenzy/mainmenu.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qwidget.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qaction.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qicon.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qpalette.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qcursor.h \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/qbitmap.h \
+		../Feeding\ Frenzy/button.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsObject \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QString \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsTextItem \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/QBrush \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsSceneHoverEvent \
+		../Feeding\ Frenzy/levels.h \
+		../Feeding\ Frenzy/view.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qlocale.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\enemy.o "..\Feeding Frenzy\enemy.cpp"
 
 release/level.o: ../Feeding\ Frenzy/level.cpp ../Feeding\ Frenzy/level.h \
@@ -1542,7 +1605,32 @@ release/level.o: ../Feeding\ Frenzy/level.cpp ../Feeding\ Frenzy/level.h \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/6.6.3/mingw_64/include/QtGui/qpainterpath.h \
 		../Feeding\ Frenzy/view.h \
-		C:/Qt/6.6.3/mingw_64/include/QtGui/QPixmap
+		C:/Qt/6.6.3/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
+		../Feeding\ Frenzy/player.h \
+		../Feeding\ Frenzy/seacreature.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/QKeyEvent \
+		../Feeding\ Frenzy/enemy.h \
+		../Feeding\ Frenzy/mainmenu.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsScene \
+		../Feeding\ Frenzy/button.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsObject \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QString \
+		C:/Qt/6.6.3/mingw_64/include/QtGui/QBrush \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsSceneHoverEvent \
+		../Feeding\ Frenzy/levels.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qlocale.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\level.o "..\Feeding Frenzy\level.cpp"
 
 release/levels.o: ../Feeding\ Frenzy/levels.cpp ../Feeding\ Frenzy/levels.h \
@@ -2353,7 +2441,9 @@ release/player.o: ../Feeding\ Frenzy/player.cpp ../Feeding\ Frenzy/player.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/qlocale.h
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\player.o "..\Feeding Frenzy\player.cpp"
 
 release/seacreature.o: ../Feeding\ Frenzy/seacreature.cpp ../Feeding\ Frenzy/seacreature.h \

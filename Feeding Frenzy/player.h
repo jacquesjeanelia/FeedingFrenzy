@@ -9,7 +9,9 @@ class player: public seaCreature
 {
     Q_OBJECT
 public:
-    player(QPixmap image);
+    player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge);
+    QPixmap small, medium, large;
+    int size;
     bool flipped = false;
 public slots:
     void createEnemy();
