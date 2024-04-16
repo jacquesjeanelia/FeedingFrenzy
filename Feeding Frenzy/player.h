@@ -5,11 +5,15 @@
 #include <QKeyEvent>
 #include "enemy.h"
 #include <mainmenu.h>
+#include "level_info.h"
 class player: public seaCreature
 {
     Q_OBJECT
+
 public:
-    player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge);
+    player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo);
+    int n = 2;
+    level_info *Info;
     QPixmap small, medium, large;
     int size;
     bool flipped = false;

@@ -1,6 +1,7 @@
 release/button.o
 release/enemy.o
 release/level.o
+release/level_info.o
 release/levels.o
 release/main.o
 release/mainmenu.o

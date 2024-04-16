@@ -3,11 +3,16 @@
 #include <QGraphicsView>
 #include <QGraphicsTextItem>
 #include "view.h"
+#include "enemy.h"
+#include "player.h"
 
 class level: public view
 {
+    friend player;
+
 public:
-    level(QPixmap background, double difficulty);
+    level(QPixmap background);
+
 };
 
 #endif // LEVEL_H

@@ -12,6 +12,7 @@ SOURCES += \
     button.cpp \
     enemy.cpp \
     level.cpp \
+    level_info.cpp \
     levels.cpp \
     main.cpp \
     mainmenu.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     button.h \
     enemy.h \
     level.h \
+    level_info.h \
     levels.h \
     mainmenu.h \
     player.h \

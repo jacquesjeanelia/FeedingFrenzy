@@ -1,6 +1,7 @@
 debug/button.o
 debug/enemy.o
 debug/level.o
+debug/level_info.o
 debug/levels.o
 debug/main.o
 debug/mainmenu.o

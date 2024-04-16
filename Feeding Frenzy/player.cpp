@@ -5,12 +5,13 @@
 #include <QDebug>
 #include "enemy.h"
 
-player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge): seaCreature(mySmall) {
+player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo): seaCreature(mySmall) {
 
     small = mySmall;
     medium = myMedium;
     large = myLarge;
     size = 1;
+    Info = myInfo;
 }
 
 //keyPress events
@@ -82,6 +83,11 @@ void player::keyPressEvent(QKeyEvent *event)
                     setPixmap(large);
                     size++;
                 }
+
+            }
+            if(n<3)
+            {
+                n++;
             }
             scene()->removeItem(collidingitems[x]);
             delete collidingitems[x];
@@ -94,7 +100,8 @@ void player::keyPressEvent(QKeyEvent *event)
 //create enemy
 void player::createEnemy()
 {
-    enemy *Enemy = new enemy(QPixmap(":/new/prefix1/small fish 1.png"), 1);
+    int random = rand() % 2;
+    enemy *Enemy = new enemy(Info->Enemies[random], 1);
     scene()->addItem(Enemy);
 }
 

@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     m =  new mainmenu(QPixmap(":/new/prefix1/mainmenu_image2.jpeg").scaled(800,600));
     l= new levels(QPixmap(":/new/prefix1/shop_background.png").scaled(800,600));
     s = new shop(QPixmap(":/new/prefix1/shop_background.png").scaled(800,600));
-    level1 = new level(QPixmap(":/new/prefix1/shop_background.png").scaled(800,600), 2);
+    level1 = new level(QPixmap(":/new/prefix1/shop_background.png").scaled(800,600));
 
     m->show();
 
