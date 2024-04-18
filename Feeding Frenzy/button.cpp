@@ -1,8 +1,10 @@
 #include "button.h"
+#include "view.h"
+button::button(QString message, int x, int y, view* in, view* out) {
 
-button::button(QString message, int x, int y) {
 
-
+    viewIn = in;
+    viewOut = out;
     this->setRect(0, 0, 100, 50);
     title = new QGraphicsTextItem(message,this);
     int xTitle = rect().width()/2 - title->boundingRect().width()/2;
@@ -25,7 +27,8 @@ button::button(QString message, int x, int y) {
 
 
 }
-void clicked(){}
+void clicked(){
+}
 void button::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     emit clicked();

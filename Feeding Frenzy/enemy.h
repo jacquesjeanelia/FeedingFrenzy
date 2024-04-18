@@ -3,6 +3,7 @@
 #include "seacreature.h"
 #include <QPixmap>
 #include <QTimer>
+
 class enemy:public seaCreature
 {
     Q_OBJECT

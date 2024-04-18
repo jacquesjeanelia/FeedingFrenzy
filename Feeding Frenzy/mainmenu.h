@@ -11,7 +11,7 @@ class mainmenu: public view
 {
     Q_OBJECT
 public:
-    mainmenu(QPixmap background);
+    mainmenu(QPixmap background, QUrl myAudio);
     QGraphicsTextItem *text;
     button* levelsButton;
     button* shopButton;

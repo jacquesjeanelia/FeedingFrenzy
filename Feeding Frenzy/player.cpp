@@ -32,7 +32,7 @@ void player::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_Right)
     {
-        if(x() < 750)
+        if(x() + 100 < 1200)
         {
             setPos(x()+5,y());
             if(flipped)
@@ -44,64 +44,75 @@ void player::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_Down)
     {
-        if(y() + 75 < 600)
+        if(y() + 100 < 800 )
         {setPos(x(),y()+5);}
     }
     else if(event->key() == Qt::Key_Up)
     {
-        if(y() > -25)
+        if(y() > 0)
         {setPos(x(),y()-5);}
     }
-
     QList<QGraphicsItem*> collidingitems = collidingItems();
+    enemy* list[collidingitems.size()];
     for(int x = 0; x< collidingitems.size(); x++)
     {
         if(typeid(*(collidingitems[x])) == typeid(enemy))
         {
-            if(size == 1)
-            {
-                if(flipped)
-                {
-                    setPixmap(medium.scaled(-1,1));
-                    size++;
-                }
-                else
-                {
-                    setPixmap(medium);
-                    size++;
-                }
-            }
-            else if(size == 2)
-            {
-                if(flipped)
-                {
-                    setPixmap(large.scaled(-1,1));
-                    size++;
-                }
-                else
-                {
-                    setPixmap(large);
-                    size++;
-                }
+            //QTimer::singleShot(3000, this, &player::hide);
 
-            }
-            if(n<3)
+            list[x] = dynamic_cast<enemy*>(collidingitems[x]);
+            if(size >= list[x]->size)
             {
-                n++;
+                if(size == 1)
+                {
+                    if(flipped)
+                    {
+                        setPixmap(medium.scaled(-1,1));
+                        size++;
+                    }
+                    else
+                    {
+                        setPixmap(medium);
+                        size++;
+                    }
+                }
+                else if(size == 2)
+                {
+                    if(flipped)
+                    {
+                        setPixmap(large.scaled(-1,1));
+                        size++;
+                    }
+                    else
+                    {
+                        setPixmap(large);
+                        size++;
+                    }
+
+                }
+                if(n<3)
+                {
+                    n++;
+                }
+                scene()->removeItem(collidingitems[x]);
+                delete collidingitems[x];
             }
-            scene()->removeItem(collidingitems[x]);
-            delete collidingitems[x];
+            else
+            {
+            }
 
         }
     }
 
 }
 
+
 //create enemy
 void player::createEnemy()
 {
-    int random = rand() % 2;
-    enemy *Enemy = new enemy(Info->Enemies[random], 1);
+    int random = rand() % n;
+    enemy *Enemy = new enemy(Info->Enemies[random], random+1);
     scene()->addItem(Enemy);
+
 }
 

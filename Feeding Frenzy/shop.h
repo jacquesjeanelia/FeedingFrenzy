@@ -7,8 +7,9 @@
 
 class shop: public view
 {
+    Q_OBJECT
 public:
-    shop(QPixmap background);
+    shop(QPixmap background, QUrl myAudio);
     QGraphicsTextItem *text;
     button* mainButton;
 };

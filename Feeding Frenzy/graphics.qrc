@@ -11,5 +11,7 @@
         <file>player1 medium.png</file>
         <file>enemy2.png</file>
         <file>enemy3.png</file>
+        <file>title screen.jpeg</file>
+        <file>background1.png</file>
     </qresource>
 </RCC>

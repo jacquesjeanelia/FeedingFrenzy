@@ -8,10 +8,14 @@
 
 class level: public view
 {
+    Q_OBJECT
     friend player;
 
 public:
-    level(QPixmap background);
+    level(QPixmap background, QUrl myAudio);
+public slots:
+    void mediaPlay();
+
 
 };
 

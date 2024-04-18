@@ -15,7 +15,7 @@ public:
     int n = 2;
     level_info *Info;
     QPixmap small, medium, large;
-    int size;
+    int size = 1;
     bool flipped = false;
 public slots:
     void createEnemy();
