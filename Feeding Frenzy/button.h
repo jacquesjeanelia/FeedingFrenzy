@@ -10,6 +10,9 @@
 #include <QGraphicsSceneHoverEvent>
 #include <QKeyEvent>
 #include "view.h"
+#include <QtMultimediaWidgets/QtMultimediaWidgets>
+#include <QtMultimedia/QtMultimedia>
+#include <QMediaPlayer>
 
 class button:public QObject, public QGraphicsRectItem
 {

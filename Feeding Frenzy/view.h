@@ -1,6 +1,7 @@
 #ifndef VIEW_H
 #define VIEW_H
 #include <QGraphicsView>
+#include <QGraphicsScene>
 #include <QPixmap>
 #include <QtMultimediaWidgets/QtMultimediaWidgets>
 #include <QtMultimedia/QtMultimedia>
@@ -15,6 +16,10 @@ public:
     QUrl audio;
     QMediaPlayer* mediaPlayer;
     QAudioOutput * output;
+public slots:
+    void mediaPlay();
+    void mediaStop();
+
 };
 
 #endif // VIEW_H

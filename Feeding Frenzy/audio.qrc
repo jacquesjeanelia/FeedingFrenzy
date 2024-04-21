@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Audio/big bubble.mp3</file>
+        <file>Audio/big eat.mp3</file>
+        <file>Audio/bigger eat.mp3</file>
+        <file>Audio/bonus 2.mp3</file>
+        <file>Audio/bonus 3.mp3</file>
+        <file>Audio/bonus.mp3</file>
+        <file>Audio/bubble stream.mp3</file>
+        <file>Audio/burp.mp3</file>
+        <file>Audio/crunch 2.mp3</file>
+        <file>Audio/crunch.mp3</file>
+        <file>Audio/gameover.mp3</file>
+        <file>Audio/grow up 1.mp3</file>
+        <file>Audio/level end.mp3</file>
+        <file>Audio/level music 1.mp3</file>
+        <file>Audio/level music 2.mp3</file>
+        <file>Audio/level music 3.mp3</file>
+        <file>Audio/level music 4.mp3</file>
+        <file>Audio/level start.mp3</file>
+        <file>Audio/life lost.mp3</file>
+        <file>Audio/medium eat.mp3</file>
+        <file>Audio/small bubble stream.mp3</file>
+        <file>Audio/small bubble.mp3</file>
+        <file>Audio/small eat.mp3</file>
+        <file>Audio/tiny bubble.mp3</file>
+        <file>Audio/main menu music.mp3</file>
+    </qresource>
+</RCC>

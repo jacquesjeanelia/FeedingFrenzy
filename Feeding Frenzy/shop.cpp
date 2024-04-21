@@ -14,7 +14,7 @@ extern mainmenu *m;
 extern levels* l;
 extern shop *s;
 extern level* level1;
-shop::shop(QPixmap background, QUrl myAudio): view(QPixmap(background),myAudio) {
+shop::shop(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/Audio/main menu music.mp3")) {
 
     // shop menu
     text = new QGraphicsTextItem("SHOP");

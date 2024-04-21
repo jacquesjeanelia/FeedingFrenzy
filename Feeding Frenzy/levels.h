@@ -9,7 +9,7 @@ class levels: public view
 {
     Q_OBJECT
 public:
-    levels(QPixmap background, QUrl myAudio);
+    levels(QPixmap background);
     QGraphicsTextItem *text;
     button* mainButton;
     button* level1Button;
@@ -17,6 +17,7 @@ public:
     button* level3Button;
     button* level4Button;
     button* level5Button;
+
 
 
 };

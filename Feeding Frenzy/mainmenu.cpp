@@ -21,13 +21,14 @@ extern levels* l;
 extern shop *s;
 extern level* level1;
 
-mainmenu::mainmenu(QPixmap background, QUrl myAudio) :view(QPixmap(background), myAudio){
+mainmenu::mainmenu(QPixmap background) :view(QPixmap(background), QUrl("qrc:/new/prefix1/Audio/main menu music.mp3")){
 
     levelsButton = new button("LEVELS", 50, 300,m,l);
     scene->addItem(levelsButton);
 
-    shopButton = new button("SHOP", 1050, 300,m,s);
+    shopButton = new button("SHOP", 950, 300,m,s);
     scene->addItem(shopButton);
+    mediaPlayer->play();
 
 
 

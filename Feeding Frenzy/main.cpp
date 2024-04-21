@@ -17,10 +17,10 @@ int main(int argc, char *argv[])
     //QSplashScreen splash(QPixmap(":/new/prefix1/title screen.jpeg"));
     //splash.show();
     //a.processEvents();
-    m =  new mainmenu(QPixmap(":/new/prefix1/title screen.jpeg"), QUrl("qrc:/new/prefix1/main menu music.mp3"));
-    l= new levels(QPixmap(":/new/prefix1/background1.png"), QUrl("qrc:/new/prefix1/main menu music.mp3"));
-    s = new shop(QPixmap(":/new/prefix1/background1.png"), QUrl("qrc:/new/prefix1/main menu music.mp3"));
-    level1 = new level(QPixmap(":/new/prefix1/background1.png"), QUrl("qrc:/new/prefix1/level music 1.mp3"));
+    m =  new mainmenu(QPixmap(":/new/prefix1/title screen.jpeg"));
+    l= new levels(QPixmap(":/new/prefix1/background1.png"));
+    s = new shop(QPixmap(":/new/prefix1/background1.png"));
+    level1 = new level(QPixmap(":/new/prefix1/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 1.mp3"));
 
     m->show();
     //splash.finish(m);
@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
     // connect the buttons
     QObject::connect(m->levelsButton, SIGNAL(clicked()), m, SLOT(hide()));
     QObject::connect(m->levelsButton, SIGNAL(clicked()), l, SLOT(show()));
-    //QObject::connect(m->levelsButton, SIGNAL(clicked(), l, SLOT(mediaPlay()));
 
     QObject::connect(m->shopButton, SIGNAL(clicked()), m, SLOT(hide()));
     QObject::connect(m->shopButton, SIGNAL(clicked()), s, SLOT(show()));
@@ -41,5 +40,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(l->level1Button, SIGNAL(clicked()), l, SLOT(hide()));
     QObject::connect(l->level1Button, SIGNAL(clicked()), level1, SLOT(show()));
+    QObject::connect(l->level1Button, SIGNAL(clicked()), level1, SLOT(mediaPlay()));
+    QObject::connect(l->level1Button, SIGNAL(clicked()), m, SLOT(mediaStop()));
+
     return a.exec();
 }

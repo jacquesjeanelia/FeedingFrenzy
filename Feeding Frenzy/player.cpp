@@ -58,6 +58,12 @@ void player::keyPressEvent(QKeyEvent *event)
     {
         if(typeid(*(collidingitems[x])) == typeid(enemy))
         {
+            QMediaPlayer *buttonClickPlayer = new QMediaPlayer;
+            QAudioOutput *buttonClickOutput = new QAudioOutput;
+            int random = rand() % 5;
+            buttonClickPlayer->setAudioOutput(buttonClickOutput);
+            buttonClickPlayer->setSource(eatList[random]);
+            buttonClickPlayer->play();
             //QTimer::singleShot(3000, this, &player::hide);
 
             list[x] = dynamic_cast<enemy*>(collidingitems[x]);
@@ -65,6 +71,8 @@ void player::keyPressEvent(QKeyEvent *event)
             {
                 if(size == 1)
                 {
+                    buttonClickPlayer->setSource(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
+                    buttonClickPlayer->play();
                     if(flipped)
                     {
                         setPixmap(medium.scaled(-1,1));
@@ -78,6 +86,8 @@ void player::keyPressEvent(QKeyEvent *event)
                 }
                 else if(size == 2)
                 {
+                    buttonClickPlayer->setSource(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
+                    buttonClickPlayer->play();
                     if(flipped)
                     {
                         setPixmap(large.scaled(-1,1));

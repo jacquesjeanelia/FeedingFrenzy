@@ -13,6 +13,7 @@ class level: public view
 
 public:
     level(QPixmap background, QUrl myAudio);
+    void pausePanel();
 public slots:
     void mediaPlay();
 

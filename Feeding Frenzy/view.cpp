@@ -18,3 +18,12 @@ view::view(QPixmap background, QUrl myAudio) {
     output->setVolume(30);
 
 }
+
+void view::mediaPlay()
+{
+    mediaPlayer->play();
+}
+void view::mediaStop()
+{
+    mediaPlayer->stop();
+}

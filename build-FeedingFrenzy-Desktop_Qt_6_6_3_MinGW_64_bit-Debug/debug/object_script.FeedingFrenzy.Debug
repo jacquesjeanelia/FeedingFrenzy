@@ -9,12 +9,11 @@ debug/player.o
 debug/seacreature.o
 debug/shop.o
 debug/view.o
+debug/qrc_audio.o
 debug/qrc_graphics.o
-debug/qrc_sound.o
 debug/moc_button.o
 debug/moc_enemy.o
 debug/moc_level.o
-debug/moc_level_info.o
 debug/moc_levels.o
 debug/moc_mainmenu.o
 debug/moc_player.o
