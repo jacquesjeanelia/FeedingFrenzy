@@ -12,6 +12,7 @@ public:
     shop(QPixmap background);
     QGraphicsTextItem *text;
     button* mainButton;
+
 };
 
 #endif // SHOP_H

@@ -22,12 +22,6 @@ level::level(QPixmap background, QUrl myAudio): view(background, myAudio) {
 void level:: mediaPlay()
 {
     mediaPlayer->play();
-    QMediaPlayer *buttonClickPlayer = new QMediaPlayer;
-    QAudioOutput *buttonClickOutput = new QAudioOutput;
-    int random = rand() % 5;
-    buttonClickPlayer->setAudioOutput(buttonClickOutput);
-    buttonClickPlayer->setSource(QUrl("qrc:/new/prefix1/Audio/level start.mp3"));
-    buttonClickPlayer->play();
 }
 
 void level::pausePanel()
