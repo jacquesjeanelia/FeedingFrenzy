@@ -8,7 +8,8 @@
 score::score(QGraphicsItem* parent):QGraphicsTextItem(parent) {
     setPlainText(QString("score: ")+ QString::number(scoreofplayer));
     setDefaultTextColor(Qt::white);
-    setFont(QFont("times",16));
+    setFont(QFont("Fantasy",16, QFont::Fantasy));
+    setPos(1100,30);
 }
 void score::increase(int sizeenemy){
     scoreofplayer=scoreofplayer+sizeenemy;

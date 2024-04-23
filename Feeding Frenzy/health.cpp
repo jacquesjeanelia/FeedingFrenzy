@@ -4,7 +4,7 @@
 health::health(QGraphicsItem* parent):QGraphicsTextItem(parent) {
     setPlainText(QString("Health: ")+ QString::number(healthofplayer));
     setDefaultTextColor(Qt::red);
-    setFont(QFont(("times"),16));
+    setFont(QFont(("Fantasy"),16, QFont::Decorative));
     setPos(1100, 0);
 }
 

@@ -18,7 +18,7 @@ player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *m
     large = myLarge;
     size = 1;
     Info = myInfo;
-    setPos(600,350);
+    setPos(600 - this->boundingRect().width(),350 - this->boundingRect().height());
     setFlag(QGraphicsItem::ItemIsFocusable);
     setFocus();
 }
@@ -53,7 +53,7 @@ void player::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_Down)
     {
-        if(y() + 100 < 800 )
+        if(y() < 650 )
         {setPos(x(),y()+5);}
     }
     else if(event->key() == Qt::Key_Up)
@@ -119,19 +119,45 @@ void player::keyPressEvent(QKeyEvent *event)
                 {
                     n++;
                 }
+
                 scene()->removeItem(collidingitems[x]);
                 delete collidingitems[x];
+
             }
             else
             {
-                playSound(QUrl("qrc:/new/prefix1/Audio/life lost.mp3"));
                 level1->levelHealth->decrease();
+                if (level1->levelHealth->healthofplayer == 0)
+                {
+                    playSound(QUrl("qrc:/new/prefix1/Audio/gameover.mp3"));
+                    for(int x = 0; x< scene()->items().size(); x++)
+                    {
+                        scene()->items()[x]->hide();
 
-                hide();
-                setPos(600,350);
-                QThread::sleep(1);
-                show();
-                setFocus();
+                        QTime respawnTime = QTime::currentTime().addMSecs(3000);
+                        while(QTime::currentTime() < respawnTime)
+                        {
+                            QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+                        }
+                        scene()->removeItem(this);
+                    }
+                }
+                else
+
+                {
+                    playSound(QUrl("qrc:/new/prefix1/Audio/life lost.mp3"));
+
+                    hide();
+                    setPos(600,350);
+                    //QThread::sleep(1);
+                    QTime respawnTime = QTime::currentTime().addMSecs(2000);
+                    while(QTime::currentTime() < respawnTime)
+                    {
+                        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+                    }
+                    show();
+                    setFocus();
+                }
             }
 
         }

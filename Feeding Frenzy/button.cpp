@@ -5,7 +5,7 @@
 button::button(QString message, int x, int y, view* in, view* out) {
 
 
-    QFont font("Jersey", 25);
+    QFont font("Jersey", 25, QFont::DemiBold);
     viewIn = in;
     viewOut = out;
     this->setRect(0, 0, 200, 100);
