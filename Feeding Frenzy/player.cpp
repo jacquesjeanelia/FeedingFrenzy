@@ -132,15 +132,10 @@ void player::keyPressEvent(QKeyEvent *event)
                     playSound(QUrl("qrc:/new/prefix1/Audio/gameover.mp3"));
                     for(int x = 0; x< scene()->items().size(); x++)
                     {
-                        scene()->items()[x]->hide();
+                      //  scene()->items()[x]->hide();
 
-                        QTime respawnTime = QTime::currentTime().addMSecs(3000);
-                        while(QTime::currentTime() < respawnTime)
-                        {
-                            QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-                        }
-                        scene()->removeItem(this);
                     }
+                    level1->pausePanel();
                 }
                 else
 
