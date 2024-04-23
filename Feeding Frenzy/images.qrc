@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/">
+        <file>Images/background1.png</file>
+        <file>Images/BarracudaBlue.png</file>
+        <file>Images/BasicCod.png</file>
+        <file>Images/BoxFishRed.png</file>
+        <file>Images/JohnDoryGreen.png</file>
+        <file>Images/LionfishYellow.png</file>
+        <file>Images/MarlinBlue.png</file>
+        <file>Images/OrcaPlain.png</file>
+        <file>Images/player1 large.png</file>
+        <file>Images/player1 medium.png</file>
+        <file>Images/player1 small.png</file>
+        <file>Images/PufferYellow.png</file>
+        <file>Images/RedCod.png</file>
+        <file>Images/title screen.jpeg</file>
+        <file>Images/TunaBlue.png</file>
+        <file>Images/Minnow.png</file>
+    </qresource>
+</RCC>

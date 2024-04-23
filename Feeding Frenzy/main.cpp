@@ -14,13 +14,13 @@ int main(int argc, char *argv[])
 {
     //main menu
     QApplication a(argc, argv);
-    //QSplashScreen splash(QPixmap(":/new/prefix1/title screen.jpeg"));
+    //QSplashScreen splash(QPixmap(":/Images/title screen.jpeg"));
     //splash.show();
     //a.processEvents();
-    m =  new mainmenu(QPixmap(":/new/prefix1/title screen.jpeg"));
-    l= new levels(QPixmap(":/new/prefix1/background1.png"));
-    s = new shop(QPixmap(":/new/prefix1/background1.png"));
-    level1 = new level(QPixmap(":/new/prefix1/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 1.mp3"));
+    m =  new mainmenu(QPixmap(":/Images/title screen.jpeg"));
+    l= new levels(QPixmap(":/Images/background1.png"));
+    s = new shop(QPixmap(":/Images/background1.png"));
+    level1 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 1.mp3"));
 
     m->show();
     //splash.finish(m);

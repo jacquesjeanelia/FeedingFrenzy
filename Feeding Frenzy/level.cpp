@@ -6,8 +6,9 @@
 level::level(QPixmap background, QUrl myAudio): view(background, myAudio) {
 
     // level template
-    level_info *i = new level_info(1, QPixmap(":/new/prefix1/small fish 1.png"),QPixmap( ":/new/prefix1/enemy2.png"), QPixmap(":/new/prefix1/enemy3.png"));
-    player *p = new player(QPixmap(":/new/prefix1/player1 small.png"), QPixmap(":/new/prefix1/player1 medium.png"), QPixmap(":/new/prefix1/player1 large.png"),i );
+    level_info *i = new level_info(1, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/LionfishYellow.png"));
+
+    player *p = new player(QPixmap(":/Images/player1 small.png"), QPixmap(":/Images/player1 medium.png"), QPixmap(":/Images/player1 large.png"),i );
     levelScore =new score;
     scene->addItem(levelScore);
     levelHealth= new health;

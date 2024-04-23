@@ -35,7 +35,6 @@ HEADERS += \
     score.h \
     seacreature.h \
     shop.h \
-    sound.h \
     view.h
 
 FORMS +=
@@ -47,4 +46,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     audio.qrc \
-    graphics.qrc
+    images.qrc

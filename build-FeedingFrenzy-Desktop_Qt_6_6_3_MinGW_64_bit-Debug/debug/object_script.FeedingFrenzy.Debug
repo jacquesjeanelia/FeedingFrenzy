@@ -11,7 +11,7 @@ debug/seacreature.o
 debug/shop.o
 debug/view.o
 debug/qrc_audio.o
-debug/qrc_graphics.o
+debug/qrc_images.o
 debug/moc_button.o
 debug/moc_enemy.o
 debug/moc_level.o

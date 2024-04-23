@@ -265,7 +265,7 @@ Makefile: ../Feeding\ Frenzy/FeedingFrenzy.pro C:/Qt/6.6.3/mingw_64/mkspecs/win3
 		C:/Qt/6.6.3/mingw_64/lib/Qt6EntryPoint.prl \
 		C:/Qt/6.6.3/mingw_64/mkspecs/features/build_pass.prf \
 		../Feeding\ Frenzy/audio.qrc \
-		../Feeding\ Frenzy/graphics.qrc
+		../Feeding\ Frenzy/images.qrc
 	$(QMAKE) -o Makefile "..\Feeding Frenzy\FeedingFrenzy.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/6.6.3/mingw_64/mkspecs/features/spec_pre.prf:
 C:/Qt/6.6.3/mingw_64/mkspecs/features/device_config.prf:
@@ -462,7 +462,7 @@ C:/Qt/6.6.3/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.6.3/mingw_64/lib/Qt6EntryPoint.prl:
 C:/Qt/6.6.3/mingw_64/mkspecs/features/build_pass.prf:
 ../Feeding\ Frenzy/audio.qrc:
-../Feeding\ Frenzy/graphics.qrc:
+../Feeding\ Frenzy/images.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile "..\Feeding Frenzy\FeedingFrenzy.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
