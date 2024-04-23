@@ -1,11 +1,12 @@
 release/button.o
 release/enemy.o
+release/health.o
 release/level.o
 release/level_info.o
 release/levels.o
 release/main.o
 release/mainmenu.o
-release/player.o
+release/score.o
 release/seacreature.o
 release/shop.o
 release/view.o

@@ -1,11 +1,12 @@
 debug/button.o
 debug/enemy.o
+debug/health.o
 debug/level.o
 debug/level_info.o
 debug/levels.o
 debug/main.o
 debug/mainmenu.o
-debug/player.o
+debug/score.o
 debug/seacreature.o
 debug/shop.o
 debug/view.o

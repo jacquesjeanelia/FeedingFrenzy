@@ -16,6 +16,7 @@
 #include <mainmenu.h>
 #include "shop.h"
 #include "level.h"
+
 extern mainmenu *m;
 extern levels* l;
 extern shop *s;

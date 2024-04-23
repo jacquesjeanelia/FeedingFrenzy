@@ -25,6 +25,7 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
     void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+    void playSound(QUrl myAudio);
 
     button* newButton(QString name, int x, int y);
 

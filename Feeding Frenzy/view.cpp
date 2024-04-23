@@ -15,7 +15,7 @@ view::view(QPixmap background, QUrl myAudio) {
     output = new QAudioOutput;
     mediaPlayer->setAudioOutput(output);
     mediaPlayer->setSource(myAudio);
-    output->setVolume(30);
+    output->setVolume(20);
 
 }
 

@@ -11,12 +11,14 @@ CONFIG += c++17
 SOURCES += \
     button.cpp \
     enemy.cpp \
+    health.cpp \
     level.cpp \
     level_info.cpp \
     levels.cpp \
     main.cpp \
     mainmenu.cpp \
     player.cpp \
+    score.cpp \
     seacreature.cpp \
     shop.cpp \
     view.cpp
@@ -24,13 +26,16 @@ SOURCES += \
 HEADERS += \
     button.h \
     enemy.h \
+    health.h \
     level.h \
     level_info.h \
     levels.h \
     mainmenu.h \
     player.h \
+    score.h \
     seacreature.h \
     shop.h \
+    sound.h \
     view.h
 
 FORMS +=

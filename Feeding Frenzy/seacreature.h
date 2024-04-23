@@ -11,6 +11,7 @@ class seaCreature: public QObject, public QGraphicsPixmapItem
 public:
     seaCreature();
     seaCreature(QPixmap image);
+    void playSound(QUrl myAudio);
 };
 
 #endif // SEACREATURE_H

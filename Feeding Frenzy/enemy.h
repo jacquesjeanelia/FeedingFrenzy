@@ -3,6 +3,7 @@
 #include "seacreature.h"
 #include <QPixmap>
 #include <QTimer>
+#include "sound.h"
 
 class enemy:public seaCreature
 {

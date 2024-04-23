@@ -6,6 +6,7 @@
 #include "enemy.h"
 #include <mainmenu.h>
 #include "level_info.h"
+#include "sound.h"
 class player: public seaCreature
 {
     Q_OBJECT
