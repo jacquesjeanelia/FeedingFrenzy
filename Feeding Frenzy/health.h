@@ -9,6 +9,9 @@ public:
     int healthofplayer=3;
     void decrease();
     int getHealth();
+    QGraphicsPixmapItem* Heart1;
+    QGraphicsPixmapItem* Heart2;
+    QGraphicsPixmapItem* Heart3;
 };
 
 

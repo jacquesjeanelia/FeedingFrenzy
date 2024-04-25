@@ -17,5 +17,6 @@
         <file>Images/title screen.jpeg</file>
         <file>Images/TunaBlue.png</file>
         <file>Images/Minnow.png</file>
+        <file>Images/Heart.png</file>
     </qresource>
 </RCC>
