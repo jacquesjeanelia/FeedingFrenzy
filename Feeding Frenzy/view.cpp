@@ -1,5 +1,5 @@
 #include "view.h"
-
+// abstract data type for all screens
 view::view(QPixmap background, QUrl myAudio) {
     //setup the view
     this->setFixedSize(1200,700);

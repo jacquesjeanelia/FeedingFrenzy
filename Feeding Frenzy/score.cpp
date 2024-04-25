@@ -4,7 +4,7 @@
 #include<QGraphicsTextItem>
 
 
-
+// score in numbers and translated to progress bar
 score::score(QGraphicsItem* parent):QGraphicsRectItem(parent) {
     setRect(200, 35, 800, 40);
     progressBar = new QGraphicsRectItem(this);
@@ -17,10 +17,6 @@ score::score(QGraphicsItem* parent):QGraphicsRectItem(parent) {
     scoreFont.setBold(true);
     scoreText->setFont(scoreFont);
     scoreText->setPos(200, 3);
-    // setPlainText(QString("score: ")+ QString::number(scoreofplayer));
-    // setDefaultTextColor(Qt::white);
-    // setFont(QFont("Fantasy",16, QFont::Fantasy));
-    // setPos(1100,30);
 }
 
 void score::increase(int sizeenemy){
@@ -29,7 +25,5 @@ void score::increase(int sizeenemy){
         scoreofplayer = 20;
     }
     progressBar -> setRect(200, 35, 40*scoreofplayer, 40);
-    //scoreofplayer ++;
     scoreText -> setPlainText(QString("Score   ") + QString::number(scoreofplayer));
 }
-

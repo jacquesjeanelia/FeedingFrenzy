@@ -4,13 +4,18 @@
 #include <QGraphicsItem>
 #include <QDebug>
 #include "enemy.h"
-#include "mainmenu.h"
 #include "level.h"
+#include "gameover.h"
 //#include "main.cpp"
+#include "victory.h"
+
+
+extern gameover* g;
+extern victory* lc;
 
 
 extern level* level1;
-
+// player class
 player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo): seaCreature(mySmall) {
 
     small = mySmall;
@@ -61,101 +66,115 @@ void player::keyPressEvent(QKeyEvent *event)
         if(y() > 0)
         {setPos(x(),y()-5);}
     }
+    //collision handling
+
     QList<QGraphicsItem*> collidingitems = collidingItems();
     enemy* list[collidingitems.size()];
-    for(int x = 0; x< collidingitems.size(); x++)
+    for(int x = 0; x < collidingitems.size(); x++)
     {
         if(typeid(*(collidingitems[x])) == typeid(enemy))
         {
 
             list[x] = dynamic_cast<enemy*>(collidingitems[x]);
+
+            // if enemy is smaller
             if(size >= list[x]->size)
             {
                 level1->levelScore->increase(list[x]->size);
-               // QMediaPlayer *buttonClickPlayer = new QMediaPlayer;
-                //QAudioOutput *buttonClickOutput = new QAudioOutput;
                 int random = rand() % 7;
-               // buttonClickPlayer->setAudioOutput(buttonClickOutput);
-                //buttonClickPlayer->setSource(eatList[random]);
-                //buttonClickPlayer->play();
                 playSound(eatList[random]);
 
-                if(size == 1)
+                if(level1->levelScore->scoreofplayer == 3)
                 {
-                    //buttonClickPlayer->setSource(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
-                    //buttonClickPlayer->play();
-                    playSound(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
-                    if(flipped)
-                    {
-                        setPixmap(medium);
-                        setPixmap(pixmap().transformed(QTransform().scale(-1,1)));
-                        size++;
-                    }
-                    else
-                    {
-                        setPixmap(medium);
-                        size++;
-                    }
-                }
-                else if(size == 2)
-                {
-                    //buttonClickPlayer->setSource(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
-                    //buttonClickPlayer->play();
-                    playSound(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
-                    if(flipped)
-                    {
-                        setPixmap(large);
-                        setPixmap(pixmap().transformed(QTransform().scale(-1,1)));
-                        size++;
-                    }
-                    else
-                    {
-                        setPixmap(large);
-                        size++;
-                    }
 
-                }
-                if(n<3)
-                {
+                    playSound(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
+                    if(flipped)
+                    {
+                        setPixmap(medium);
+                        setPixmap(pixmap().transformed(QTransform().scale(-1,1)));
+                        size++;
+                    }
+                    else
+                    {
+                        setPixmap(medium);
+                        size++;
+                    }
                     n++;
-                }
 
+                }
+                else if(size == 2 && level1->levelScore->scoreofplayer >= 10)
+                {
+
+                    {
+                        playSound(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
+                        if(flipped)
+                        {
+                            setPixmap(large);
+                            setPixmap(pixmap().transformed(QTransform().scale(-1,1)));
+                            size++;
+                        }
+                        else
+                        {
+                            setPixmap(large);
+                            size++;
+                        }
+                        n++;
+
+                    }
+                }
+                else if(size == 3 && level1->levelScore->scoreofplayer >= 19)
+                {
+
+                    {
+                        //gameover code
+                        for(int x = 0; x< scene()->items().size(); x++)
+                        {
+                            scene()->items()[x]->hide();
+
+                        }
+                        lc->show();
+                        level1->hide();
+
+
+                    }
+                }
                 scene()->removeItem(collidingitems[x]);
                 delete collidingitems[x];
+            }
+            // if enemy is bigger
+        else
+        {
+            level1->levelHealth->decrease();
+            if (level1->levelHealth->healthofplayer == 0)
+            {
+                playSound(QUrl("qrc:/new/prefix1/Audio/gameover.mp3"));
+                for(int x = 0; x< scene()->items().size(); x++)
+                {
+                    scene()->items()[x]->hide();
 
+                }
+                g->show();
+                level1->hide();
             }
             else
+
             {
-                level1->levelHealth->decrease();
-                if (level1->levelHealth->healthofplayer == 0)
+                playSound(QUrl("qrc:/new/prefix1/Audio/life lost.mp3"));
+
+                hide();
+                setPos(600,350);
+                QTime respawnTime = QTime::currentTime().addMSecs(2000);
+                while(QTime::currentTime() < respawnTime)
                 {
-                    playSound(QUrl("qrc:/new/prefix1/Audio/gameover.mp3"));
-                    for(int x = 0; x< scene()->items().size(); x++)
-                    {
-                         scene()->items()[x]->hide();
-
-                    }
+                    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
                 }
-                else
-
-                {
-                    playSound(QUrl("qrc:/new/prefix1/Audio/life lost.mp3"));
-
-                    hide();
-                    setPos(600,350);
-                    QTime respawnTime = QTime::currentTime().addMSecs(2000);
-                    while(QTime::currentTime() < respawnTime)
-                    {
-                        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-                    }
-                    show();
-                    setFocus();
-                }
+                show();
+                setFocus();
             }
-
         }
     }
 
+}
 }
 
 

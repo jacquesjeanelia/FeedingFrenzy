@@ -14,12 +14,11 @@ extern levels* l;
 extern shop *s;
 extern level* level1;
 
+//screen with all levels
+
 levels::levels(QPixmap background): view(QPixmap(background), QUrl("qrc:/new/prefix1/Audio/main menu music.mp3")) {
 
     // levels menu
-    //text = new QGraphicsTextItem("LEVELS");
-    //text->setPos((this->width()/2)-(text->boundingRect().width())/2, 100);
-    //scene->addItem(text);
 
     mainButton = new button("MAIN MENU", 50, 50, l, m);
     scene->addItem(mainButton);

@@ -2,14 +2,15 @@
 #include "view.h"
 #include <QFont>
 
+
+//buttons to switch from screen to screen
 button::button(QString message, int x, int y, view* in, view* out) {
 
-
-    QFont font("Jersey", 25, QFont::DemiBold);
     viewIn = in;
     viewOut = out;
     this->setRect(0, 0, 200, 100);
     title = new QGraphicsTextItem(message,this);
+    QFont font("Jersey", 25, QFont::DemiBold);
     title->setFont(font);
     int xTitle = rect().width()/2 - title->boundingRect().width()/2;
     int yTitle = rect().height()/2 - title->boundingRect().height()/2;
@@ -33,6 +34,7 @@ button::button(QString message, int x, int y, view* in, view* out) {
 }
 void clicked(){
 }
+//mouse pressed event
 void button::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     QMediaPlayer *buttonClickPlayer = new QMediaPlayer;
@@ -43,6 +45,8 @@ void button::mousePressEvent(QGraphicsSceneMouseEvent *event)
     buttonClickPlayer->play();
     emit clicked();
 }
+
+//mouse hover event
 void button::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     QMediaPlayer *buttonHoverPlayer = new QMediaPlayer;

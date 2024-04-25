@@ -1,6 +1,8 @@
 #include "level_info.h"
 #include "enemy.h"
 
+
+//level info (enemy QPixmaps, difficulty - implemented later when multiple levels are created)
 level_info::level_info(double myDifficulty, QPixmap myEnemy1, QPixmap myEnemy2, QPixmap myEnemy3) {
     difficulty = myDifficulty;
     Enemies[0] = myEnemy1;

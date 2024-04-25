@@ -10,6 +10,8 @@
 #include <mainmenu.h>
 #include "shop.h"
 #include "level.h"
+
+//shop later to be implemented
 extern mainmenu *m;
 extern levels* l;
 extern shop *s;

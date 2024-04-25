@@ -2,6 +2,8 @@
 #include <QAudioOutput>
 #include <QMediaPlayer>
 
+
+// abstract data type for enemies, and player
 seaCreature::seaCreature(){
 
 }

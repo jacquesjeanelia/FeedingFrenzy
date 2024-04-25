@@ -2,6 +2,8 @@
 #include <QDebug>
 #include <QFont>
 
+
+//health object created in level
 health::health(QGraphicsItem* parent): QGraphicsTextItem(parent) {
     setPlainText(QString("Health"));
     setDefaultTextColor(Qt::red);
@@ -25,7 +27,7 @@ health::health(QGraphicsItem* parent): QGraphicsTextItem(parent) {
     Heart3->setPos(50, 30);
 }
 
-
+// helath decrease function
 void health::decrease(){
     healthofplayer--;
     if (healthofplayer == 2) {

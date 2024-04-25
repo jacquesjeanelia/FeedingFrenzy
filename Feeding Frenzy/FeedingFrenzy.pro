@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     button.cpp \
     enemy.cpp \
+    gameover.cpp \
     health.cpp \
     level.cpp \
     level_info.cpp \
@@ -21,11 +22,13 @@ SOURCES += \
     score.cpp \
     seacreature.cpp \
     shop.cpp \
+    victory.cpp \
     view.cpp
 
 HEADERS += \
     button.h \
     enemy.h \
+    gameover.h \
     health.h \
     level.h \
     level_info.h \
@@ -35,6 +38,7 @@ HEADERS += \
     score.h \
     seacreature.h \
     shop.h \
+    victory.h \
     view.h
 
 FORMS +=

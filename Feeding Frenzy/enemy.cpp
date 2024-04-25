@@ -2,7 +2,7 @@
 #include <QGraphicsScene>
 #include "player.h"
 
-
+//create enemies
 enemy::enemy(QPixmap myImage, int mySize): seaCreature(myImage) {
 
     size = mySize;
@@ -36,7 +36,7 @@ enemy::enemy(QPixmap myImage, int mySize): seaCreature(myImage) {
     }
 
 }
-
+//moving the enemies
 void enemy::move()
 {
     {
