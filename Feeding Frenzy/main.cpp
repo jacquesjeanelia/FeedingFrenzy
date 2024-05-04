@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     //splash.finish(m);
 
     // connect the buttons
+
     QObject::connect(m->levelsButton, SIGNAL(clicked()), m, SLOT(hide()));
     QObject::connect(m->levelsButton, SIGNAL(clicked()), l, SLOT(show()));
 
@@ -48,17 +49,27 @@ int main(int argc, char *argv[])
 
     QObject::connect(g->quitButton, SIGNAL(clicked()), g, SLOT(hide()));
     QObject::connect(g->quitButton, SIGNAL(clicked()), m, SLOT(show()));
+    QObject::connect(g->quitButton, SIGNAL(clicked()), level1, SLOT(Stop()));
+    QObject::connect(g->quitButton, SIGNAL(clicked()), m, SLOT(mediaPlay()));
+
+
 
     QObject::connect(g->tryButton, SIGNAL(clicked()), g, SLOT(hide()));
-    QObject::connect(g->tryButton, SIGNAL(clicked()), l, SLOT(show()));
+    QObject::connect(g->tryButton, SIGNAL(clicked()), level1, SLOT(Stop()));
+    QObject::connect(g->tryButton, SIGNAL(clicked()), level1, SLOT(Play()));
 
-     QObject::connect(lc->menuButton, SIGNAL(clicked()), lc, SLOT(hide()));
-     QObject::connect(lc->menuButton, SIGNAL(clicked()), l, SLOT(show()));
+
+
+    QObject::connect(lc->menuButton, SIGNAL(clicked()), lc, SLOT(hide()));
+    QObject::connect(lc->menuButton, SIGNAL(clicked()), l, SLOT(show()));
+    QObject::connect(lc->menuButton, SIGNAL(clicked()), m, SLOT(mediaPlay()));
+    QObject::connect(lc->menuButton, SIGNAL(clicked()), level1, SLOT(Stop()));
 
     QObject::connect(l->level1Button, SIGNAL(clicked()), l, SLOT(hide()));
-    QObject::connect(l->level1Button, SIGNAL(clicked()), level1, SLOT(show()));
-    QObject::connect(l->level1Button, SIGNAL(clicked()), level1, SLOT(mediaPlay()));
+    //QObject::connect(l->level1Button, SIGNAL(clicked()), level1, SLOT(show()));
+    QObject::connect(l->level1Button, SIGNAL(clicked()), level1, SLOT(Play()));
     QObject::connect(l->level1Button, SIGNAL(clicked()), m, SLOT(mediaStop()));
+
 
     return a.exec();
 }

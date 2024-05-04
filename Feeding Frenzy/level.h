@@ -15,13 +15,15 @@ class level: public view
     friend player;
 
 public:
-    score *levelScore;
-    health *levelHealth;
-    level(QPixmap background, QUrl myAudio);
+    level(QPixmap myBackground, QUrl myAudio);
+    QPixmap background;
+    QUrl audio;
     void pausePanel();
+    level* Level;
+    player* myPlayer;
 public slots:
-    void mediaPlay();
-
+    void Play();
+    void Stop();
 
 };
 

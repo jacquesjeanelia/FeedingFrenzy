@@ -30,6 +30,6 @@ gameover::gameover(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/
     scene->addItem(quitButton);
 
     // Create a try again button
-    tryButton = new button("LEVELS", 660, 250,this,l);
+    tryButton = new button("TRY AGAIN", 660, 250,this,l);
     scene->addItem(tryButton);
 }

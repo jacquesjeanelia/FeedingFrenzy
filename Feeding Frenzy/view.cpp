@@ -23,6 +23,7 @@ void view::mediaPlay()
 {
     mediaPlayer->play();
 }
+
 void view::mediaStop()
 {
     mediaPlayer->stop();

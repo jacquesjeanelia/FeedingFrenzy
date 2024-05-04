@@ -28,6 +28,11 @@ player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *m
     setFocus();
 }
 
+
+void over()
+{
+}
+
 //keyPress events
 void player::keyPressEvent(QKeyEvent *event)
 {
@@ -80,11 +85,11 @@ void player::keyPressEvent(QKeyEvent *event)
             // if enemy is smaller
             if(size >= list[x]->size)
             {
-                level1->levelScore->increase(list[x]->size);
+                myScore->increase(list[x]->size);
                 int random = rand() % 7;
                 playSound(eatList[random]);
 
-                if(level1->levelScore->scoreofplayer == 3)
+                if(myScore->scoreofplayer == 3)
                 {
 
                     playSound(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
@@ -102,7 +107,7 @@ void player::keyPressEvent(QKeyEvent *event)
                     n++;
 
                 }
-                else if(size == 2 && level1->levelScore->scoreofplayer >= 10)
+                else if(size == 2 && myScore->scoreofplayer >= 10)
                 {
 
                     {
@@ -122,7 +127,7 @@ void player::keyPressEvent(QKeyEvent *event)
 
                     }
                 }
-                else if(size == 3 && level1->levelScore->scoreofplayer >= 19)
+                else if(size == 3 && myScore->scoreofplayer >= 19)
                 {
 
                     {
@@ -133,7 +138,7 @@ void player::keyPressEvent(QKeyEvent *event)
 
                         }
                         lc->show();
-                        level1->hide();
+
 
 
                     }
@@ -144,8 +149,8 @@ void player::keyPressEvent(QKeyEvent *event)
             // if enemy is bigger
         else
         {
-            level1->levelHealth->decrease();
-            if (level1->levelHealth->healthofplayer == 0)
+            myHealth->decrease();
+            if (myHealth->healthofplayer == 0)
             {
                 playSound(QUrl("qrc:/new/prefix1/Audio/gameover.mp3"));
                 for(int x = 0; x< scene()->items().size(); x++)
@@ -154,7 +159,7 @@ void player::keyPressEvent(QKeyEvent *event)
 
                 }
                 g->show();
-                level1->hide();
+
             }
             else
 
@@ -177,12 +182,14 @@ void player::keyPressEvent(QKeyEvent *event)
 }
 }
 
-
 //create enemy
 void player::createEnemy()
 {
-    int random = rand() % n;
-    enemy *Enemy = new enemy(Info->Enemies[random], random+1);
-    scene()->addItem(Enemy);
+    if (myHealth->healthofplayer > 0)
+    {
+        int random = rand() % n;
+        enemy *Enemy = new enemy(Info->Enemies[random], random+1);
+        scene()->addItem(Enemy);
+    }
 
 }

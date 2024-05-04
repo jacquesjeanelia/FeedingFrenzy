@@ -3,16 +3,18 @@
 #include "seacreature.h"
 #include <QPixmap>
 #include <QKeyEvent>
-#include "enemy.h"
 #include <mainmenu.h>
 #include "level_info.h"
-#include "sound.h"
+#include "health.h"
+#include "score.h"
 class player: public seaCreature
 {
     Q_OBJECT
 
 public:
-    player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo);
+    health* myHealth = new health;
+    score* myScore = new score;
+    player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo );
     int n = 2;
     level_info *Info;
     QPixmap small, medium, large;
