@@ -22,6 +22,7 @@ level::level(QPixmap myBackground, QUrl myAudio): view(myBackground, myAudio) {
     QObject::connect(timer, SIGNAL(timeout()), myPlayer, SLOT(createEnemy()));
     timer->start(2000);
 
+
 }
 
 void level:: Play()
