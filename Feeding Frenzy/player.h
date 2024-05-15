@@ -27,6 +27,8 @@ public slots:
 
 signals:
     void over();
+    void win();
+    void lose();
 };
 
 #endif // PLAYER_H

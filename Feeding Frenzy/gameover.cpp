@@ -7,9 +7,11 @@
 #include <QObject>
 #include <mainmenu.h>
 #include "level.h"
+#include "levels.h"
 
 // External Declarations
 extern mainmenu *MainMenu;
+extern levels* LevelsMenu;
 
 // Constructor for gameover class
 gameover::gameover(QPixmap background, level *myLevel): view(QPixmap(background),QUrl("qrc:/new/prefix1/Audio/gameover.mp3")) {
@@ -26,16 +28,15 @@ gameover::gameover(QPixmap background, level *myLevel): view(QPixmap(background)
     Level = myLevel;
 
     // Create a quit button
-    quitButton = new button("QUIT", 300, 250,this,MainMenu);
-    scene->addItem(quitButton);
+    levelsButton = new button("LEVELS", 500, 250,this,MainMenu);
+    scene->addItem(levelsButton);
 
     // Create a try again button
-    tryButton = new button("TRY AGAIN", 660, 250,this, Level);
-    scene->addItem(tryButton);
+    //tryButton = new button("TRY AGAIN", 660, 250,this, myLevel);
+    //scene->addItem(tryButton);
 
-    QObject::connect(quitButton, SIGNAL(clicked()), this, SLOT(hide()));
-    QObject::connect(quitButton, SIGNAL(clicked()), MainMenu, SLOT(show()));
-    QObject::connect(quitButton, SIGNAL(clicked()), MainMenu, SLOT(mediaPlay()));
-    QObject::connect(tryButton, SIGNAL(clicked()), this, SLOT(hide()));
-    QObject::connect(tryButton, SIGNAL(clicked()), Level, SLOT(Play()));
+    QObject::connect(levelsButton, SIGNAL(clicked()), this, SLOT(hide()));
+    QObject::connect(levelsButton, SIGNAL(clicked()), LevelsMenu, SLOT(show()));
+    QObject::connect(levelsButton, SIGNAL(clicked()), LevelsMenu, SLOT(mediaPlay()));
+
 }

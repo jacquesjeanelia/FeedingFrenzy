@@ -10,11 +10,12 @@
 #include "health.h"
 #include "level_info.h"
 
+
 class level: public view
 {
     Q_OBJECT
 public:
-    level(QPixmap myBackground, QUrl myAudio, level_info *myinfo);
+    level(QPixmap myBackground, QUrl myAudio, level_info *myinfo );
     QPixmap background;
     QUrl audio;
     level* Level;

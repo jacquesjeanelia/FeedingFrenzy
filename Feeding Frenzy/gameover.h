@@ -13,8 +13,8 @@ public:
     gameover(QPixmap background, level *myLevel);
     QGraphicsTextItem *text;
     level* Level;
-    button* quitButton;
-    button* tryButton;
+    button* levelsButton;
+    //button* tryButton;
 };
 
 #endif // GAMEOVER_H

@@ -35,6 +35,16 @@ void over()
 {
 }
 
+void win()
+{
+
+}
+
+void lose()
+{
+
+}
+
 //keyPress events
 void player::keyPressEvent(QKeyEvent *event)
 {
@@ -141,6 +151,7 @@ void player::keyPressEvent(QKeyEvent *event)
                         playSound(QUrl("qrc:/new/prefix1/Audio/level end.mp3"));
                         victory1->show();
                         emit over();
+                        emit win();
 
 
                     }
@@ -162,6 +173,7 @@ void player::keyPressEvent(QKeyEvent *event)
                     }
                     gameover1->show();
                     emit over();
+                    emit lose();
 
 
                 }
