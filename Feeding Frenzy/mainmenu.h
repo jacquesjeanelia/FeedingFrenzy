@@ -3,7 +3,6 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include "button.h"
-#include "levels.h"
 #include "view.h"
 #include <QTime>
 #include <QObject>

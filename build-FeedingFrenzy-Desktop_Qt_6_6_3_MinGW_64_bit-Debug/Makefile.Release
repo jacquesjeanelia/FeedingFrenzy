@@ -206,10 +206,12 @@ release/qrc_images.cpp: ../Feeding\ Frenzy/images.qrc \
 		C:/Qt/6.6.3/mingw_64/bin/rcc.exe \
 		../Feeding\ Frenzy/Images/PufferYellow.png \
 		../Feeding\ Frenzy/Images/player1\ medium.png \
+		../Feeding\ Frenzy/Images/TunaBlue\ Mid.png \
 		../Feeding\ Frenzy/Images/Minnow.png \
 		../Feeding\ Frenzy/Images/player1\ large.png \
 		../Feeding\ Frenzy/Images/Heart.png \
 		../Feeding\ Frenzy/Images/RedCod.png \
+		../Feeding\ Frenzy/Images/TunaBlue\ Big.png \
 		../Feeding\ Frenzy/Images/MarlinBlue.png \
 		../Feeding\ Frenzy/Images/BasicCod.png \
 		../Feeding\ Frenzy/Images/OrcaPlain.png \
@@ -1657,6 +1659,22 @@ release/moc_gameover.cpp: ../Feeding\ Frenzy/gameover.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimediaWidgets/qvideowidget.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsversion.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimedia/QMediaPlayer \
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/enemy.h \
+		../Feeding\ Frenzy/seacreature.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
+		../Feeding\ Frenzy/player.h \
+		../Feeding\ Frenzy/mainmenu.h \
+		../Feeding\ Frenzy/levels.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
+		../Feeding\ Frenzy/level_info.h \
+		../Feeding\ Frenzy/health.h \
+		../Feeding\ Frenzy/score.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/sound.h \
 		release/moc_predefs.h \
 		C:/Qt/6.6.3/mingw_64/bin/moc.exe
 	C:\Qt\6.6.3\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/jacqu/Documents/FeedingFrenzy/build-FeedingFrenzy-Desktop_Qt_6_6_3_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.6.3/mingw_64/mkspecs/win32-g++ -I"C:/Users/jacqu/Documents/FeedingFrenzy/Feeding Frenzy" -IC:/Qt/6.6.3/mingw_64/include -IC:/Qt/6.6.3/mingw_64/include/QtMultimedia -IC:/Qt/6.6.3/mingw_64/include/QtWidgets -IC:/Qt/6.6.3/mingw_64/include/QtGui -IC:/Qt/6.6.3/mingw_64/include/QtNetwork -IC:/Qt/6.6.3/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include "..\Feeding Frenzy\gameover.h" -o release\moc_gameover.cpp
@@ -2308,10 +2326,13 @@ release/moc_level.cpp: ../Feeding\ Frenzy/level.h \
 		../Feeding\ Frenzy/levels.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
 		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
 		../Feeding\ Frenzy/health.h \
 		../Feeding\ Frenzy/score.h \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/sound.h \
+		../Feeding\ Frenzy/victory.h \
 		release/moc_predefs.h \
 		C:/Qt/6.6.3/mingw_64/bin/moc.exe
 	C:\Qt\6.6.3\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/jacqu/Documents/FeedingFrenzy/build-FeedingFrenzy-Desktop_Qt_6_6_3_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.6.3/mingw_64/mkspecs/win32-g++ -I"C:/Users/jacqu/Documents/FeedingFrenzy/Feeding Frenzy" -IC:/Qt/6.6.3/mingw_64/include -IC:/Qt/6.6.3/mingw_64/include/QtMultimedia -IC:/Qt/6.6.3/mingw_64/include/QtWidgets -IC:/Qt/6.6.3/mingw_64/include/QtGui -IC:/Qt/6.6.3/mingw_64/include/QtNetwork -IC:/Qt/6.6.3/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include "..\Feeding Frenzy\level.h" -o release\moc_level.cpp
@@ -3759,10 +3780,6 @@ release/moc_player.cpp: ../Feeding\ Frenzy/player.h \
 		C:/Qt/6.6.3/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.6.3/mingw_64/include/QtGui/qkeysequence.h \
-		../Feeding\ Frenzy/enemy.h \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		../Feeding\ Frenzy/mainmenu.h \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsScene \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qgraphicsscene.h \
@@ -3830,6 +3847,7 @@ release/moc_player.cpp: ../Feeding\ Frenzy/player.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qassociativeiterable.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qbitarray.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qbuffer.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qbytearraymatcher.h \
@@ -3923,6 +3941,7 @@ release/moc_player.cpp: ../Feeding\ Frenzy/player.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtextboundaryfinder.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qthreadstorage.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtimeline.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtranslator.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtransposeproxymodel.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qurlquery.h \
@@ -4248,10 +4267,16 @@ release/moc_player.cpp: ../Feeding\ Frenzy/player.h \
 		../Feeding\ Frenzy/levels.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
 		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
+		../Feeding\ Frenzy/enemy.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
 		../Feeding\ Frenzy/health.h \
 		../Feeding\ Frenzy/score.h \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/player.h \
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/sound.h \
 		release/moc_predefs.h \
 		C:/Qt/6.6.3/mingw_64/bin/moc.exe
 	C:\Qt\6.6.3\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/jacqu/Documents/FeedingFrenzy/build-FeedingFrenzy-Desktop_Qt_6_6_3_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.6.3/mingw_64/mkspecs/win32-g++ -I"C:/Users/jacqu/Documents/FeedingFrenzy/Feeding Frenzy" -IC:/Qt/6.6.3/mingw_64/include -IC:/Qt/6.6.3/mingw_64/include/QtMultimedia -IC:/Qt/6.6.3/mingw_64/include/QtWidgets -IC:/Qt/6.6.3/mingw_64/include/QtGui -IC:/Qt/6.6.3/mingw_64/include/QtNetwork -IC:/Qt/6.6.3/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include "..\Feeding Frenzy\player.h" -o release\moc_player.cpp
@@ -5678,6 +5703,22 @@ release/moc_victory.cpp: ../Feeding\ Frenzy/victory.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimediaWidgets/qvideowidget.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsversion.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimedia/QMediaPlayer \
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/enemy.h \
+		../Feeding\ Frenzy/seacreature.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
+		../Feeding\ Frenzy/player.h \
+		../Feeding\ Frenzy/mainmenu.h \
+		../Feeding\ Frenzy/levels.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
+		../Feeding\ Frenzy/level_info.h \
+		../Feeding\ Frenzy/health.h \
+		../Feeding\ Frenzy/score.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/sound.h \
 		release/moc_predefs.h \
 		C:/Qt/6.6.3/mingw_64/bin/moc.exe
 	C:\Qt\6.6.3\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/jacqu/Documents/FeedingFrenzy/build-FeedingFrenzy-Desktop_Qt_6_6_3_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.6.3/mingw_64/mkspecs/win32-g++ -I"C:/Users/jacqu/Documents/FeedingFrenzy/Feeding Frenzy" -IC:/Qt/6.6.3/mingw_64/include -IC:/Qt/6.6.3/mingw_64/include/QtMultimedia -IC:/Qt/6.6.3/mingw_64/include/QtWidgets -IC:/Qt/6.6.3/mingw_64/include/QtGui -IC:/Qt/6.6.3/mingw_64/include/QtNetwork -IC:/Qt/6.6.3/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include "..\Feeding Frenzy\victory.h" -o release\moc_victory.cpp
@@ -7619,10 +7660,13 @@ release/enemy.o: ../Feeding\ Frenzy/enemy.cpp ../Feeding\ Frenzy/enemy.h \
 		../Feeding\ Frenzy/levels.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
 		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
 		../Feeding\ Frenzy/health.h \
 		../Feeding\ Frenzy/score.h \
-		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/sound.h \
+		../Feeding\ Frenzy/victory.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\enemy.o "..\Feeding Frenzy\enemy.cpp"
 
 release/gameover.o: ../Feeding\ Frenzy/gameover.cpp ../Feeding\ Frenzy/gameover.h \
@@ -8263,9 +8307,21 @@ release/gameover.o: ../Feeding\ Frenzy/gameover.cpp ../Feeding\ Frenzy/gameover.
 		C:/Qt/6.6.3/mingw_64/include/QtMultimediaWidgets/qvideowidget.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsversion.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/enemy.h \
+		../Feeding\ Frenzy/seacreature.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
+		../Feeding\ Frenzy/player.h \
 		../Feeding\ Frenzy/mainmenu.h \
-		../Feeding\ Frenzy/levels.h
+		../Feeding\ Frenzy/levels.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
+		../Feeding\ Frenzy/level_info.h \
+		../Feeding\ Frenzy/health.h \
+		../Feeding\ Frenzy/score.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/sound.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\gameover.o "..\Feeding Frenzy\gameover.cpp"
 
 release/health.o: ../Feeding\ Frenzy/health.cpp ../Feeding\ Frenzy/health.h \
@@ -9056,10 +9112,12 @@ release/level.o: ../Feeding\ Frenzy/level.cpp ../Feeding\ Frenzy/level.h \
 		../Feeding\ Frenzy/levels.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
 		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
 		../Feeding\ Frenzy/health.h \
 		../Feeding\ Frenzy/score.h \
-		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/sound.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\level.o "..\Feeding Frenzy\level.cpp"
 
 release/level_info.o: ../Feeding\ Frenzy/level_info.cpp ../Feeding\ Frenzy/level_info.h \
@@ -9855,10 +9913,12 @@ release/levels.o: ../Feeding\ Frenzy/levels.cpp ../Feeding\ Frenzy/levels.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
 		../Feeding\ Frenzy/player.h \
 		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
 		../Feeding\ Frenzy/health.h \
 		../Feeding\ Frenzy/score.h \
-		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/sound.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\levels.o "..\Feeding Frenzy\levels.cpp"
 
 release/main.o: ../Feeding\ Frenzy/main.cpp ../Feeding\ Frenzy/mainmenu.h \
@@ -10510,13 +10570,13 @@ release/main.o: ../Feeding\ Frenzy/main.cpp ../Feeding\ Frenzy/mainmenu.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
 		../Feeding\ Frenzy/player.h \
 		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
 		../Feeding\ Frenzy/health.h \
 		../Feeding\ Frenzy/score.h \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
-		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QSplashScreen \
 		../Feeding\ Frenzy/gameover.h \
-		../Feeding\ Frenzy/victory.h
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/sound.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QSplashScreen
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o "..\Feeding Frenzy\main.cpp"
 
 release/mainmenu.o: ../Feeding\ Frenzy/mainmenu.cpp ../Feeding\ Frenzy/mainmenu.h \
@@ -11162,15 +11222,17 @@ release/mainmenu.o: ../Feeding\ Frenzy/mainmenu.cpp ../Feeding\ Frenzy/mainmenu.
 		../Feeding\ Frenzy/player.h \
 		../Feeding\ Frenzy/seacreature.h \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		../Feeding\ Frenzy/level_info.h \
 		../Feeding\ Frenzy/enemy.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
-		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
 		../Feeding\ Frenzy/health.h \
 		../Feeding\ Frenzy/score.h \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
-		../Feeding\ Frenzy/shop.h \
-		../Feeding\ Frenzy/level.h
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/sound.h \
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/shop.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainmenu.o "..\Feeding Frenzy\mainmenu.cpp"
 
 release/score.o: ../Feeding\ Frenzy/score.cpp ../Feeding\ Frenzy/score.h \
@@ -11333,10 +11395,6 @@ release/score.o: ../Feeding\ Frenzy/score.cpp ../Feeding\ Frenzy/score.h \
 		C:/Qt/6.6.3/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.6.3/mingw_64/include/QtGui/qkeysequence.h \
-		../Feeding\ Frenzy/enemy.h \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		../Feeding\ Frenzy/mainmenu.h \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsScene \
 		C:/Qt/6.6.3/mingw_64/include/QtWidgets/qgraphicsscene.h \
@@ -11404,6 +11462,7 @@ release/score.o: ../Feeding\ Frenzy/score.cpp ../Feeding\ Frenzy/score.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qexception.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qpromise.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qassociativeiterable.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qbasictimer.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qbitarray.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qbuffer.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qbytearraymatcher.h \
@@ -11497,6 +11556,7 @@ release/score.o: ../Feeding\ Frenzy/score.cpp ../Feeding\ Frenzy/score.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtextboundaryfinder.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qthreadstorage.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtimeline.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtranslator.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qtransposeproxymodel.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/qurlquery.h \
@@ -11822,12 +11882,15 @@ release/score.o: ../Feeding\ Frenzy/score.cpp ../Feeding\ Frenzy/score.h \
 		../Feeding\ Frenzy/levels.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
 		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
+		../Feeding\ Frenzy/enemy.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
 		../Feeding\ Frenzy/health.h \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/QDebug \
-		../Feeding\ Frenzy/level.h \
 		../Feeding\ Frenzy/gameover.h \
-		../Feeding\ Frenzy/victory.h
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/sound.h \
+		../Feeding\ Frenzy/victory.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QDebug \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QFile
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\score.o "..\Feeding Frenzy\score.cpp"
 
 release/seacreature.o: ../Feeding\ Frenzy/seacreature.cpp ../Feeding\ Frenzy/seacreature.h \
@@ -12629,10 +12692,12 @@ release/shop.o: ../Feeding\ Frenzy/shop.cpp ../Feeding\ Frenzy/shop.h \
 		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
 		../Feeding\ Frenzy/player.h \
 		../Feeding\ Frenzy/level_info.h \
-		../Feeding\ Frenzy/sound.h \
 		../Feeding\ Frenzy/health.h \
 		../Feeding\ Frenzy/score.h \
-		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/victory.h \
+		../Feeding\ Frenzy/sound.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\shop.o "..\Feeding Frenzy\shop.cpp"
 
 release/victory.o: ../Feeding\ Frenzy/victory.cpp ../Feeding\ Frenzy/victory.h \
@@ -13273,9 +13338,21 @@ release/victory.o: ../Feeding\ Frenzy/victory.cpp ../Feeding\ Frenzy/victory.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimediaWidgets/qvideowidget.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimediaWidgets/qtmultimediawidgetsversion.h \
 		C:/Qt/6.6.3/mingw_64/include/QtMultimedia/QMediaPlayer \
-		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
+		../Feeding\ Frenzy/level.h \
+		../Feeding\ Frenzy/enemy.h \
+		../Feeding\ Frenzy/seacreature.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTimer \
+		../Feeding\ Frenzy/player.h \
 		../Feeding\ Frenzy/mainmenu.h \
-		../Feeding\ Frenzy/levels.h
+		../Feeding\ Frenzy/levels.h \
+		C:/Qt/6.6.3/mingw_64/include/QtCore/QTime \
+		../Feeding\ Frenzy/level_info.h \
+		../Feeding\ Frenzy/health.h \
+		../Feeding\ Frenzy/score.h \
+		C:/Qt/6.6.3/mingw_64/include/QtWidgets/QGraphicsItem \
+		../Feeding\ Frenzy/gameover.h \
+		../Feeding\ Frenzy/sound.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\victory.o "..\Feeding Frenzy\victory.cpp"
 
 release/view.o: ../Feeding\ Frenzy/view.cpp ../Feeding\ Frenzy/view.h \

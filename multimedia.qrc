@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/new/prefix1">
-        <file>mainmenu_image2.jpeg</file>
-        <file>mainmenu_image.jpg</file>
-        <file>shop_background.png</file>
-    </qresource>
-</RCC>

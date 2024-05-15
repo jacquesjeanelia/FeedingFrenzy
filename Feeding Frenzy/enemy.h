@@ -8,7 +8,7 @@ class enemy:public seaCreature
 {
     Q_OBJECT
 public:
-    enemy(QPixmap image, int s);
+    enemy(QPixmap image, int s, double difficulty);
     int size;
     bool side = true;
 public slots:

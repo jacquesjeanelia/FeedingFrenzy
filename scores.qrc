@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/new/scoretab">
-        <file>score.txt</file>
-    </qresource>
-</RCC>

@@ -18,5 +18,7 @@
         <file>Images/TunaBlue.png</file>
         <file>Images/Minnow.png</file>
         <file>Images/Heart.png</file>
+        <file>Images/TunaBlue Big.png</file>
+        <file>Images/TunaBlue Mid.png</file>
     </qresource>
 </RCC>

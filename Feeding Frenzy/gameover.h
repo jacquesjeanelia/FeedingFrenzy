@@ -4,13 +4,15 @@
 #include <QGraphicsTextItem>
 #include "button.h"
 #include "view.h"
+#include "level.h"
 
 class gameover: public view
 {
     Q_OBJECT
 public:
-    gameover(QPixmap background);
+    gameover(QPixmap background, level *myLevel);
     QGraphicsTextItem *text;
+    level* Level;
     button* quitButton;
     button* tryButton;
 };

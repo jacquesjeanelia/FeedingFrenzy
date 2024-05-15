@@ -6,10 +6,12 @@
 #include <QTime>
 #include <QObject>
 #include <mainmenu.h>
+#include "level.h"
+#include "levels.h"
 
 // Declare the external variables
-extern mainmenu *m;
-extern levels* l;
+extern mainmenu *MainMenu;
+extern levels* LevelsMenu;
 
 
 // Constructor for the victory class
@@ -22,14 +24,22 @@ victory::victory(QPixmap background): view(QPixmap(background), QUrl("qrc:/new/p
     text->setDefaultTextColor(Qt::black);
     text->setPos(500,30);
     scene->addItem(text);
+    //Next =myNext;
 
     // Create a new button for the "Menu" option
 
-    menuButton = new button("Menu", 300, 250,this,m);
+    menuButton = new button("MAIN MENU", 300, 250,this,MainMenu);
     scene->addItem(menuButton);
 
     // Create a new button for the "Next Level" option
-    nextButton = new button("Next Level", 660, 250,this,l);
+    nextButton = new button("LEVELS", 660, 250,this,Next);
     scene->addItem(nextButton);
+
+    QObject::connect(menuButton, SIGNAL(clicked()), this, SLOT(hide()));
+    QObject::connect(menuButton, SIGNAL(clicked()), MainMenu, SLOT(show()));
+    QObject::connect(menuButton, SIGNAL(clicked()), MainMenu, SLOT(mediaPlay()));
+    QObject::connect(nextButton, SIGNAL(clicked()), this, SLOT(hide()));
+    //QObject::connect(nextButton, SIGNAL(clicked()), Next, SLOT(show()));
+    QObject::connect(nextButton, SIGNAL(clicked()), LevelsMenu, SLOT(Play()));
 
 }

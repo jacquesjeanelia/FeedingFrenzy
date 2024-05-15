@@ -3,18 +3,20 @@
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include <QDebug>
+#include <QString>
 #include "enemy.h"
-#include "level.h"
 #include "gameover.h"
 //#include "main.cpp"
 #include "victory.h"
+#include <QFile>
+#include <QDebug>
 
-
-extern gameover* g;
-extern victory* lc;
 
 
 extern level* level1;
+extern gameover* gameover1;
+extern victory* victory1;
+
 // player class
 player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo): seaCreature(mySmall) {
 
@@ -40,14 +42,14 @@ void player::keyPressEvent(QKeyEvent *event)
     if(event->key() == Qt::Key_Left)
     {
         if(x() > 0)
-    {
-        setPos(x()-5,y());
-        if(!flipped)
         {
-            setPixmap(pixmap().transformed(QTransform().scale(-1,1)));
-            flipped = true;
+            setPos(x()-5,y());
+            if(!flipped)
+            {
+                setPixmap(pixmap().transformed(QTransform().scale(-1,1)));
+                flipped = true;
+            }
         }
-    }
     }
     else if(event->key() == Qt::Key_Right)
     {
@@ -88,7 +90,6 @@ void player::keyPressEvent(QKeyEvent *event)
                 myScore->increase(list[x]->size);
                 int random = rand() % 7;
                 playSound(eatList[random]);
-
                 if(myScore->scoreofplayer == 3)
                 {
 
@@ -123,7 +124,7 @@ void player::keyPressEvent(QKeyEvent *event)
                             setPixmap(large);
                             size++;
                         }
-                        n++;
+                        //n++;
 
                     }
                 }
@@ -137,8 +138,9 @@ void player::keyPressEvent(QKeyEvent *event)
                             scene()->items()[x]->hide();
 
                         }
-                        lc->show();
-
+                        playSound(QUrl("qrc:/new/prefix1/Audio/level end.mp3"));
+                        victory1->show();
+                        emit over();
 
 
                     }
@@ -147,39 +149,41 @@ void player::keyPressEvent(QKeyEvent *event)
                 delete collidingitems[x];
             }
             // if enemy is bigger
-        else
-        {
-            myHealth->decrease();
-            if (myHealth->healthofplayer == 0)
-            {
-                playSound(QUrl("qrc:/new/prefix1/Audio/gameover.mp3"));
-                for(int x = 0; x< scene()->items().size(); x++)
-                {
-                    scene()->items()[x]->hide();
-
-                }
-                g->show();
-
-            }
             else
-
             {
-                playSound(QUrl("qrc:/new/prefix1/Audio/life lost.mp3"));
-
-                hide();
-                setPos(600,350);
-                QTime respawnTime = QTime::currentTime().addMSecs(2000);
-                while(QTime::currentTime() < respawnTime)
+                myHealth->decrease();
+                if (myHealth->healthofplayer == 0)
                 {
-                    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+                    playSound(QUrl("qrc:/new/prefix1/Audio/gameover.mp3"));
+                    for(int x = 0; x< scene()->items().size(); x++)
+                    {
+                        scene()->items()[x]->hide();
+
+                    }
+                    gameover1->show();
+                    emit over();
+
+
                 }
-                show();
-                setFocus();
+                else
+
+                {
+                    playSound(QUrl("qrc:/new/prefix1/Audio/life lost.mp3"));
+
+                    hide();
+                    setPos(600,350);
+                    QTime respawnTime = QTime::currentTime().addMSecs(2000);
+                    while(QTime::currentTime() < respawnTime)
+                    {
+                        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+                    }
+                    show();
+                    setFocus();
+                }
             }
         }
-    }
 
-}
+    }
 }
 
 //create enemy
@@ -187,8 +191,8 @@ void player::createEnemy()
 {
     if (myHealth->healthofplayer > 0)
     {
-        int random = rand() % n;
-        enemy *Enemy = new enemy(Info->Enemies[random], random+1);
+        int random = rand() % n ;
+        enemy *Enemy = new enemy(Info->Enemies[random], random+1, Info->difficulty);
         scene()->addItem(Enemy);
     }
 

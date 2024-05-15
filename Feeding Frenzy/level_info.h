@@ -1,7 +1,6 @@
 #ifndef LEVEL_INFO_H
 #define LEVEL_INFO_H
 #include <QPixmap>
-#include "enemy.h"
 
 class level_info
 {

@@ -12,9 +12,9 @@ class player: public seaCreature
     Q_OBJECT
 
 public:
+    player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo);
     health* myHealth = new health;
     score* myScore = new score;
-    player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo );
     int n = 2;
     level_info *Info;
     QPixmap small, medium, large;
@@ -24,6 +24,9 @@ public:
 public slots:
     void createEnemy();
     void keyPressEvent(QKeyEvent *event);
+
+signals:
+    void over();
 };
 
 #endif // PLAYER_H

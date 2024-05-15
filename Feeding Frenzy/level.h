@@ -8,22 +8,22 @@
 #include "sound.h"
 #include "score.h"
 #include "health.h"
+#include "level_info.h"
 
 class level: public view
 {
     Q_OBJECT
-    friend player;
-
 public:
-    level(QPixmap myBackground, QUrl myAudio);
+    level(QPixmap myBackground, QUrl myAudio, level_info *myinfo);
     QPixmap background;
     QUrl audio;
-    void pausePanel();
     level* Level;
     player* myPlayer;
+    level_info *info;
+
 public slots:
     void Play();
-    void Stop();
+    //void Stop();
 
 };
 

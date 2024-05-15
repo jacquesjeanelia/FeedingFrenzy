@@ -6,14 +6,13 @@
 #include <QTime>
 #include <QObject>
 #include <mainmenu.h>
+#include "level.h"
 
 // External Declarations
-extern mainmenu *m;
-extern levels* l;
-extern gameover *g;
+extern mainmenu *MainMenu;
 
 // Constructor for gameover class
-gameover::gameover(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/Audio/gameover.mp3")) {
+gameover::gameover(QPixmap background, level *myLevel): view(QPixmap(background),QUrl("qrc:/new/prefix1/Audio/gameover.mp3")) {
 
     // Initialize gameover screen
     text = new QGraphicsTextItem;
@@ -24,12 +23,19 @@ gameover::gameover(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/
     scene->addItem(text);
     QFont font("Jersey", 25, QFont::DemiBold);
     text->setFont(font);
+    Level = myLevel;
 
     // Create a quit button
-    quitButton = new button("QUIT", 300, 250,this,m);
+    quitButton = new button("QUIT", 300, 250,this,MainMenu);
     scene->addItem(quitButton);
 
     // Create a try again button
-    tryButton = new button("TRY AGAIN", 660, 250,this,l);
+    tryButton = new button("TRY AGAIN", 660, 250,this, Level);
     scene->addItem(tryButton);
+
+    QObject::connect(quitButton, SIGNAL(clicked()), this, SLOT(hide()));
+    QObject::connect(quitButton, SIGNAL(clicked()), MainMenu, SLOT(show()));
+    QObject::connect(quitButton, SIGNAL(clicked()), MainMenu, SLOT(mediaPlay()));
+    QObject::connect(tryButton, SIGNAL(clicked()), this, SLOT(hide()));
+    QObject::connect(tryButton, SIGNAL(clicked()), Level, SLOT(Play()));
 }

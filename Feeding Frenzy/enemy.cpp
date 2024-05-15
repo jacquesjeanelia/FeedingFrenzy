@@ -3,7 +3,7 @@
 #include "player.h"
 
 //create enemies
-enemy::enemy(QPixmap myImage, int mySize): seaCreature(myImage) {
+enemy::enemy(QPixmap myImage, int mySize, double difficulty): seaCreature(myImage) {
 
     size = mySize;
     int randomNumber = rand() % 600;
@@ -22,17 +22,18 @@ enemy::enemy(QPixmap myImage, int mySize): seaCreature(myImage) {
 
     QTimer *timer = new QTimer;
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
+
     if(size==1)
     {
-        timer->start(7);
+        timer->start(7/difficulty);
     }
     else if(size == 2)
     {
-        timer->start(10);
+        timer->start(10 / difficulty);
     }
     else if(size==3)
-   {
-        timer->start(20);
+    {
+        timer->start(20 / difficulty);
     }
 
 }
