@@ -23,14 +23,15 @@ void level:: Play()
     mediaPlayer->play();
     QObject::connect(myPlayer, SIGNAL(over()), this, SLOT(mediaStop()));
     QObject::connect(myPlayer, SIGNAL(over()), this, SLOT(hide()));
+    //QObject::connect(myPlayer, SIGNAL(over()), this, SLOT(Stop()));
     show();
 
 }
 
-//void level:: Stop()
-//{
-    //mediaStop();
-    //hide();
-    //delete(this);
+void level:: Stop()
+{
+    mediaStop();
+    hide();
+    delete(this);
 
-//}
+}

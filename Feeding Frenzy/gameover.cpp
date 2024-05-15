@@ -14,7 +14,7 @@ extern mainmenu *MainMenu;
 extern levels* LevelsMenu;
 
 // Constructor for gameover class
-gameover::gameover(QPixmap background, level *myLevel): view(QPixmap(background),QUrl("qrc:/new/prefix1/Audio/gameover.mp3")) {
+gameover::gameover(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/Audio/gameover.mp3")) {
 
     // Initialize gameover screen
     text = new QGraphicsTextItem;
@@ -25,10 +25,10 @@ gameover::gameover(QPixmap background, level *myLevel): view(QPixmap(background)
     scene->addItem(text);
     QFont font("Jersey", 25, QFont::DemiBold);
     text->setFont(font);
-    Level = myLevel;
+
 
     // Create a quit button
-    levelsButton = new button("LEVELS", 500, 250,this,MainMenu);
+    levelsButton = new button("LEVELS", 500, 250,this,LevelsMenu);
     scene->addItem(levelsButton);
 
     // Create a try again button

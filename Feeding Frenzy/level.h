@@ -24,7 +24,7 @@ public:
 
 public slots:
     void Play();
-    //void Stop();
+    void Stop();
 
 };
 

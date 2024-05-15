@@ -10,7 +10,7 @@ class gameover: public view
 {
     Q_OBJECT
 public:
-    gameover(QPixmap background, level *myLevel);
+    gameover(QPixmap background);
     QGraphicsTextItem *text;
     level* Level;
     button* levelsButton;

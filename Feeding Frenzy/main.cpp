@@ -20,16 +20,7 @@ level* level4;
 level* level5;
 
 gameover* gameover1;
-gameover* gameover2;
-gameover* gameover3;
-gameover* gameover4;
-gameover* gameover5;
-
 victory* victory1;
-victory* victory2;
-victory* victory3;
-victory* victory4;
-victory* victory5;
 
 level_info* level_1_info;
 level_info* level_2_info;
@@ -61,18 +52,8 @@ int main(int argc, char *argv[])
     level4 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 3.mp3"), level_4_info);
     level5 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 4.mp3"), level_5_info);
 
-    gameover1 = new gameover(QPixmap(":/Images/background1.png"),level1);
-    gameover2 = new gameover(QPixmap(":/Images/background1.png"),level2);
-    gameover3 = new gameover(QPixmap(":/Images/background1.png"),level3);
-    gameover4 = new gameover(QPixmap(":/Images/background1.png"),level4);
-    gameover5 = new gameover(QPixmap(":/Images/background1.png"),level5);
-
-
+    gameover1 = new gameover(QPixmap(":/Images/background1.png"));
     victory1 = new victory(QPixmap(":/Images/background1.png"));
-    victory2 = new victory(QPixmap(":/Images/background1.png"));
-    victory3 = new victory(QPixmap(":/Images/background1.png"));
-    victory4 = new victory(QPixmap(":/Images/background1.png"));
-    victory5 = new victory(QPixmap(":/Images/background1.png"));
 
 
     MainMenu->show();
@@ -111,5 +92,12 @@ int main(int argc, char *argv[])
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), LevelsMenu, SLOT(hide()));
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), level5, SLOT(Play()));
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), MainMenu, SLOT(mediaStop()));
+
+    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level1, SLOT(Stop()));
+    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level2, SLOT(Stop()));
+    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level3, SLOT(Stop()));
+    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level4, SLOT(Stop()));
+    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level5, SLOT(Stop()));
+
     return a.exec();
 }

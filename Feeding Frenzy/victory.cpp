@@ -10,7 +10,6 @@
 #include "level.h"
 
 // Declare the external variables
-extern mainmenu *MainMenu;
 extern levels* LevelsMenu;
 
 
@@ -31,7 +30,7 @@ victory::victory(QPixmap background): view(QPixmap(background), QUrl("qrc:/new/p
     //scene->addItem(menuButton);
 
     // Create a new button for the "Next Level" option
-    levelsButton = new button("LEVELS", 500, 250,this,MainMenu);
+    levelsButton = new button("LEVELS", 500, 250,this,LevelsMenu);
     scene->addItem(levelsButton);
 
     //QObject::connect(menuButton, SIGNAL(clicked()), this, SLOT(hide()));
@@ -39,6 +38,6 @@ victory::victory(QPixmap background): view(QPixmap(background), QUrl("qrc:/new/p
     //QObject::connect(menuButton, SIGNAL(clicked()), MainMenu, SLOT(mediaPlay()));
     QObject::connect(levelsButton, SIGNAL(clicked()), this, SLOT(hide()));
     QObject::connect(levelsButton, SIGNAL(clicked()), LevelsMenu, SLOT(show()));
-    QObject::connect(levelsButton, SIGNAL(clicked()), MainMenu, SLOT(mediaPlay()));
+    QObject::connect(levelsButton, SIGNAL(clicked()), LevelsMenu, SLOT(mediaPlay()));
 
 }
