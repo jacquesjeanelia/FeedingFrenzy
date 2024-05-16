@@ -45,8 +45,8 @@ constexpr auto qt_meta_stringdata_CLASSplayerENDCLASS = QtMocHelpers::stringData
     "player",
     "over",
     "",
-    "win",
     "lose",
+    "win",
     "createEnemy",
     "keyPressEvent",
     "QKeyEvent*",
@@ -58,8 +58,8 @@ struct qt_meta_stringdata_CLASSplayerENDCLASS_t {
     char stringdata0[7];
     char stringdata1[5];
     char stringdata2[1];
-    char stringdata3[4];
-    char stringdata4[5];
+    char stringdata3[5];
+    char stringdata4[4];
     char stringdata5[12];
     char stringdata6[14];
     char stringdata7[11];
@@ -72,8 +72,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSplayerENDCLASS_t qt_meta_string
         QT_MOC_LITERAL(0, 6),  // "player"
         QT_MOC_LITERAL(7, 4),  // "over"
         QT_MOC_LITERAL(12, 0),  // ""
-        QT_MOC_LITERAL(13, 3),  // "win"
-        QT_MOC_LITERAL(17, 4),  // "lose"
+        QT_MOC_LITERAL(13, 4),  // "lose"
+        QT_MOC_LITERAL(18, 3),  // "win"
         QT_MOC_LITERAL(22, 11),  // "createEnemy"
         QT_MOC_LITERAL(34, 13),  // "keyPressEvent"
         QT_MOC_LITERAL(48, 10),  // "QKeyEvent*"
@@ -82,8 +82,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSplayerENDCLASS_t qt_meta_string
     "player",
     "over",
     "",
-    "win",
     "lose",
+    "win",
     "createEnemy",
     "keyPressEvent",
     "QKeyEvent*",
@@ -138,9 +138,9 @@ Q_CONSTINIT const QMetaObject player::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<player, std::true_type>,
         // method 'over'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'win'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'lose'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'win'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'createEnemy'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -158,8 +158,8 @@ void player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         (void)_t;
         switch (_id) {
         case 0: _t->over(); break;
-        case 1: _t->win(); break;
-        case 2: _t->lose(); break;
+        case 1: _t->lose(); break;
+        case 2: _t->win(); break;
         case 3: _t->createEnemy(); break;
         case 4: _t->keyPressEvent((*reinterpret_cast< std::add_pointer_t<QKeyEvent*>>(_a[1]))); break;
         default: ;
@@ -175,14 +175,14 @@ void player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         }
         {
             using _t = void (player::*)();
-            if (_t _q_method = &player::win; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &player::lose; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
         }
         {
             using _t = void (player::*)();
-            if (_t _q_method = &player::lose; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &player::win; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 2;
                 return;
             }
@@ -227,13 +227,13 @@ void player::over()
 }
 
 // SIGNAL 1
-void player::win()
+void player::lose()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 
 // SIGNAL 2
-void player::lose()
+void player::win()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }

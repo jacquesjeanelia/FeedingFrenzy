@@ -1,5 +1,4 @@
 #include "level_info.h"
-#include "enemy.h"
 
 
 //level info (enemy QPixmaps, difficulty - implemented later when multiple levels are created)

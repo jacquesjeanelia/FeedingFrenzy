@@ -6,7 +6,6 @@
 #include <QTime>
 #include <QObject>
 #include <mainmenu.h>
-#include "level.h"
 #include "levels.h"
 
 // External Declarations
@@ -28,15 +27,15 @@ gameover::gameover(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/
 
 
     // Create a quit button
-    levelsButton = new button("LEVELS", 500, 250,this,LevelsMenu);
+    levelsButton = new button("LEVELS", 300, 250);
     scene->addItem(levelsButton);
 
     // Create a try again button
-    //tryButton = new button("TRY AGAIN", 660, 250,this, myLevel);
-    //scene->addItem(tryButton);
+    tryButton = new button("TRY AGAIN", 660, 250);
+    scene->addItem(tryButton);
 
     QObject::connect(levelsButton, SIGNAL(clicked()), this, SLOT(hide()));
     QObject::connect(levelsButton, SIGNAL(clicked()), LevelsMenu, SLOT(show()));
-    QObject::connect(levelsButton, SIGNAL(clicked()), LevelsMenu, SLOT(mediaPlay()));
+    QObject::connect(levelsButton, SIGNAL(clicked()), MainMenu, SLOT(mediaPlay()));
 
 }

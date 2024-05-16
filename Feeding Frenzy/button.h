@@ -1,3 +1,4 @@
+
 #ifndef BUTTON_H
 #define BUTTON_H
 #include <QObject>
@@ -18,9 +19,8 @@ class button:public QObject, public QGraphicsRectItem
 {
     Q_OBJECT
 public:
-    button(QString message, int x, int y, view* in, view* out);
+    button(QString message, int x, int y);
     QGraphicsTextItem *title;
-    view *viewIn, *viewOut;
     //View = myView;
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);

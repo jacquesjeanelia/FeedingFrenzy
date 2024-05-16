@@ -1,6 +1,5 @@
 #include "enemy.h"
 #include <QGraphicsScene>
-#include "player.h"
 
 //create enemies
 enemy::enemy(QPixmap myImage, int mySize, double difficulty): seaCreature(myImage) {
@@ -20,7 +19,7 @@ enemy::enemy(QPixmap myImage, int mySize, double difficulty): seaCreature(myImag
     }
 
 
-    QTimer *timer = new QTimer;
+    QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
     if(size==1)

@@ -25,5 +25,6 @@
         <file>Audio/small eat.mp3</file>
         <file>Audio/tiny bubble.mp3</file>
         <file>Audio/main menu music.mp3</file>
+        <file>Audio/bonus mermaid.mp3</file>
     </qresource>
 </RCC>

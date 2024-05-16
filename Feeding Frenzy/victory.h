@@ -11,8 +11,9 @@ class victory: public view
 public:
     victory(QPixmap background);
     QGraphicsTextItem *text;
-    button* menuButton;
+    button* nextButton;
     button* levelsButton;
+
 };
 
 #endif // VICTORY_H

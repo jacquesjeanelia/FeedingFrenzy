@@ -26,22 +26,22 @@ levels::levels(QPixmap background): view(QPixmap(background), QUrl("qrc:/new/pre
 
     // levels menu
 
-    mainButton = new button("MAIN MENU", 50, 50, LevelsMenu, MainMenu);
+    mainButton = new button("MAIN MENU", 50, 50);
     scene->addItem(mainButton);
 
-    level1Button = new button("LEVEL 1", 500, 50, LevelsMenu, level1);
+    level1Button = new button("LEVEL 1", 500, 50);
     scene->addItem(level1Button);
 
-    level2Button = new button("LEVEL 2", 950, 50, LevelsMenu, level2 );
+    level2Button = new button("LEVEL 2", 950, 50 );
     scene->addItem(level2Button);
 
-    level3Button = new button("LEVEL 3", 50, 400,LevelsMenu, level3);
+    level3Button = new button("LEVEL 3", 50, 400);
     scene->addItem(level3Button);
 
-    level4Button = new button("LEVEL 4", 500, 400,LevelsMenu, level4);
+    level4Button = new button("LEVEL 4", 500, 400);
     scene->addItem(level4Button);
 
-    level5Button = new button("LEVEL 5", 950, 400,LevelsMenu, level5);
+    level5Button = new button("LEVEL 5", 950, 400);
     scene->addItem(level5Button);
 }
 

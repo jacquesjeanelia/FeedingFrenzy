@@ -9,7 +9,6 @@
 #include <QObject>
 #include <mainmenu.h>
 #include "shop.h"
-#include "level.h"
 
 //shop later to be implemented
 extern mainmenu *MainMenu;
@@ -21,6 +20,6 @@ shop::shop(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/
     // shop menu
     text = new QGraphicsTextItem("SHOP");
     text->setPos((this->width()/2)-(text->boundingRect().width())/2, 100);
-    mainButton = new button("MAIN MENU", 50, 50,ShopMenu,MainMenu);
+    mainButton = new button("MAIN MENU", 50, 50);
     scene->addItem(mainButton);
 }

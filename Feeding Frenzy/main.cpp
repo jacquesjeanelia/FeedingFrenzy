@@ -20,7 +20,17 @@ level* level4;
 level* level5;
 
 gameover* gameover1;
+gameover* gameover2;
+gameover* gameover3;
+gameover* gameover4;
+gameover* gameover5;
+
 victory* victory1;
+victory* victory2;
+victory* victory3;
+victory* victory4;
+victory* victory5;
+
 
 level_info* level_1_info;
 level_info* level_2_info;
@@ -42,19 +52,45 @@ int main(int argc, char *argv[])
     level_4_info = new level_info(1.7, QPixmap(":/Images/PufferYellow.png"),QPixmap( ":/Images/MarlinBlue.png"), QPixmap(":/Images/TunaBlue.png"));
     level_5_info = new level_info(1.9, QPixmap(":/Images/BarracudaBlue.png"),QPixmap( ":/Images/TunaBlue Big.png"), QPixmap(":/Images/OrcaPlain.png"));
 
-    MainMenu =  new mainmenu(QPixmap(":/Images/title screen.jpeg"));
+    MainMenu =  new mainmenu(QPixmap(":/Images/title screen.png"));
     LevelsMenu = new levels(QPixmap(":/Images/background1.png"));
     ShopMenu = new shop(QPixmap(":/Images/background1.png"));
 
-    level1 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 1.mp3"), level_1_info);
-    level2 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 1.mp3"), level_2_info);
-    level3 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 3.mp3"), level_3_info);
-    level4 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 3.mp3"), level_4_info);
-    level5 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 4.mp3"), level_5_info);
-
     gameover1 = new gameover(QPixmap(":/Images/background1.png"));
-    victory1 = new victory(QPixmap(":/Images/background1.png"));
+    gameover2 = new gameover(QPixmap(":/Images/background1.png"));
+    gameover3 = new gameover(QPixmap(":/Images/background1.png"));
+    gameover4 = new gameover(QPixmap(":/Images/background1.png"));
+    gameover5 = new gameover(QPixmap(":/Images/background1.png"));
 
+    victory1 = new victory(QPixmap(":/Images/background1.png"));
+    victory2 = new victory(QPixmap(":/Images/background1.png"));
+    victory3 = new victory(QPixmap(":/Images/background1.png"));
+    victory4 = new victory(QPixmap(":/Images/background1.png"));
+    victory5 = new victory(QPixmap(":/Images/background1.png"));
+
+    victory5->scene->clear();
+    victory5->text = new QGraphicsTextItem;
+    victory5->text->setFont(QFont("Fantasy",38, QFont::Fantasy));
+    victory5->text->setPlainText(QString("CONGRATULATIONS"));
+    victory5->text->setDefaultTextColor(Qt::black);
+    victory5->text->setPos(450,30);
+    victory5->scene->addItem(victory5->text);
+    QFont font("Jersey", 25, QFont::DemiBold);
+    victory5->text->setFont(font);
+    // Create a Main Menu button
+    victory5->nextButton = new button("MAIN MENU", 500, 250);
+    victory5->scene->addItem(victory5->nextButton);
+
+
+    QObject::connect(victory5->nextButton, SIGNAL(clicked()), victory5, SLOT(hide()));
+    QObject::connect(victory5->nextButton, SIGNAL(clicked()), MainMenu, SLOT(show()));
+    QObject::connect(victory5->nextButton, SIGNAL(clicked()), MainMenu, SLOT(mediaPlay()));
+
+    level1 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 1.mp3"), level_1_info, gameover1, victory1);
+    level2 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 1.mp3"), level_2_info, gameover2, victory2);
+    level3 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 3.mp3"), level_3_info, gameover3, victory3);
+    level4 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 3.mp3"), level_4_info, gameover4, victory4);
+    level5 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 4.mp3"), level_5_info, gameover5, victory5);
 
     MainMenu->show();
     //splash.finish(m);
@@ -93,11 +129,36 @@ int main(int argc, char *argv[])
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), level5, SLOT(Play()));
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), MainMenu, SLOT(mediaStop()));
 
-    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level1, SLOT(Stop()));
-    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level2, SLOT(Stop()));
-    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level3, SLOT(Stop()));
-    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level4, SLOT(Stop()));
-    QObject::connect(victory1->menuButton, SIGNAL(clicked()), level5, SLOT(Stop()));
+    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level1, SLOT(Stop()));
+    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level2, SLOT(Stop()));
+    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level3, SLOT(Stop()));
+    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level4, SLOT(Stop()));
+    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level5, SLOT(Stop()));
+
+    QObject::connect(gameover1->tryButton, SIGNAL(clicked()), gameover1, SLOT(hide()));
+    QObject::connect(gameover1->tryButton, SIGNAL(clicked()), level1, SLOT(Play()));
+    QObject::connect(victory1->nextButton, SIGNAL(clicked()), victory1, SLOT(hide()));
+    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level2, SLOT(Play()));
+
+    QObject::connect(gameover2->tryButton, SIGNAL(clicked()), gameover2, SLOT(hide()));
+    QObject::connect(gameover2->tryButton, SIGNAL(clicked()), level2, SLOT(Play()));
+    QObject::connect(victory2->nextButton, SIGNAL(clicked()), victory2, SLOT(hide()));
+    QObject::connect(victory2->nextButton, SIGNAL(clicked()), level3, SLOT(Play()));
+
+    QObject::connect(gameover3->tryButton, SIGNAL(clicked()), gameover3, SLOT(hide()));
+    QObject::connect(gameover3->tryButton, SIGNAL(clicked()), level3, SLOT(Play()));
+    QObject::connect(victory3->nextButton, SIGNAL(clicked()), victory3, SLOT(hide()));
+    QObject::connect(victory3->nextButton, SIGNAL(clicked()), level4, SLOT(Play()));
+
+    QObject::connect(gameover4->tryButton, SIGNAL(clicked()), gameover4, SLOT(hide()));
+    QObject::connect(gameover4->tryButton, SIGNAL(clicked()), level4, SLOT(Play()));
+    QObject::connect(victory4->nextButton, SIGNAL(clicked()), victory4, SLOT(hide()));
+    QObject::connect(victory4->nextButton, SIGNAL(clicked()), level5, SLOT(Play()));
+
+    QObject::connect(gameover5->tryButton, SIGNAL(clicked()), gameover5, SLOT(hide()));
+    QObject::connect(gameover5->tryButton, SIGNAL(clicked()), level5, SLOT(Play()));
+    QObject::connect(victory5->nextButton, SIGNAL(clicked()), victory5, SLOT(hide()));
+    QObject::connect(victory5->nextButton, SIGNAL(clicked()), MainMenu, SLOT(show()));
 
     return a.exec();
 }

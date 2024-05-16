@@ -6,19 +6,18 @@
 #include <QString>
 #include "enemy.h"
 #include "gameover.h"
-//#include "main.cpp"
 #include "victory.h"
 #include <QFile>
 #include <QDebug>
 
 
 
-extern level* level1;
+//extern level* level1;
 extern gameover* gameover1;
 extern victory* victory1;
 
 // player class
-player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo): seaCreature(mySmall) {
+player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo, gameover* myGameOver, victory* myVictory): seaCreature(mySmall) {
 
     small = mySmall;
     medium = myMedium;
@@ -28,11 +27,18 @@ player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *m
     setPos(600 - this->boundingRect().width(),350 - this->boundingRect().height());
     setFlag(QGraphicsItem::ItemIsFocusable);
     setFocus();
+    Victory = myVictory;
+    Gameover = myGameOver;
+
 }
 
 
 void over()
 {
+}
+void lose()
+{
+
 }
 
 void win()
@@ -40,10 +46,6 @@ void win()
 
 }
 
-void lose()
-{
-
-}
 
 //keyPress events
 void player::keyPressEvent(QKeyEvent *event)
@@ -134,7 +136,6 @@ void player::keyPressEvent(QKeyEvent *event)
                             setPixmap(large);
                             size++;
                         }
-                        //n++;
 
                     }
                 }
@@ -149,8 +150,7 @@ void player::keyPressEvent(QKeyEvent *event)
 
                         }
                         playSound(QUrl("qrc:/new/prefix1/Audio/level end.mp3"));
-                        victory1->show();
-                        emit over();
+                        //Victory->show();
                         emit win();
 
 
@@ -171,8 +171,8 @@ void player::keyPressEvent(QKeyEvent *event)
                         scene()->items()[x]->hide();
 
                     }
-                    gameover1->show();
-                    emit over();
+                    //gameover1->show();
+                    //emit over();
                     emit lose();
 
 
@@ -201,11 +201,10 @@ void player::keyPressEvent(QKeyEvent *event)
 //create enemy
 void player::createEnemy()
 {
-    if (myHealth->healthofplayer > 0)
-    {
+
         int random = rand() % n ;
         enemy *Enemy = new enemy(Info->Enemies[random], random+1, Info->difficulty);
         scene()->addItem(Enemy);
-    }
+
 
 }
