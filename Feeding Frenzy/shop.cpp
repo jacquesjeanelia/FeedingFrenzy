@@ -43,11 +43,6 @@ shop::shop(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/
     scene->addItem(mainButton);
     Total->setFont(QFont("times", 28));
     Total->setDefaultTextColor(Qt::white);
-    //totalFile.open(QIODevice::ReadOnly);
-    //totalString = totalIn.readLine();
-    //intScore = totalString.toInt();
-    //totalFile.close();
-    //totalString = QString::number(totalpoints);
     Total->setPos(900,50);
     updateScore();
     scene->addItem(Total);
@@ -134,6 +129,7 @@ shop::shop(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/
     QObject::connect(Select0, &button::clicked, [this]() { this->SelectItem(0); });
     ownedFile.close();
 
+    //buy buttons
     for(int i = 0; i < 3; i++) {
         if(have[i] == false) {
             if (i == 0) {
@@ -153,7 +149,7 @@ shop::shop(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/
                 QObject::connect(Buy3, &button::clicked, [this]() { this->buyItem(200); });
 
             }
-        } else {
+        } else { //select buttons
             if (i == 0) {
                 button* Select1 = new button("SELECT", 350, 450);
                 scene->addItem(Select1);
