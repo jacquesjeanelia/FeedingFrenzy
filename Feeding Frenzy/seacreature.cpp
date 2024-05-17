@@ -7,9 +7,10 @@
 seaCreature::seaCreature(){
 
 }
-seaCreature::seaCreature(QPixmap image) {
+seaCreature::seaCreature(QPixmap image,int mySize) {
     // set image of sea creature
     setPixmap(image);
+    size = mySize;
 }
 
 void seaCreature::playSound(QUrl myAudio)

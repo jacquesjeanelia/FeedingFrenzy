@@ -2,9 +2,8 @@
 #include <QGraphicsScene>
 
 //create enemies
-enemy::enemy(QPixmap myImage, int mySize, double difficulty): seaCreature(myImage) {
+enemy::enemy(QPixmap myImage, int mySize, double difficulty): seaCreature(myImage,mySize) {
 
-    size = mySize;
     int randomNumber = rand() % 600;
     if(randomNumber % 2 == 0)
     {

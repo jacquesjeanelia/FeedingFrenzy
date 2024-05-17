@@ -32,12 +32,11 @@ extern gameover* gameover1;
 extern victory* victory1;
 
 // player class
-player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo, gameover* myGameOver, victory* myVictory): seaCreature(mySmall) {
+player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo, gameover* myGameOver, victory* myVictory): seaCreature(mySmall, 1) {
 
     small = mySmall;
     medium = myMedium;
     large = myLarge;
-    size = 1;
     Info = myInfo;
     max = Info->max;
     setPos(600 - this->boundingRect().width(),350 - this->boundingRect().height());

@@ -10,8 +10,9 @@ class seaCreature: public QObject, public QGraphicsPixmapItem
 
 public:
     seaCreature();
-    seaCreature(QPixmap image);
+    seaCreature(QPixmap image,int mySize);
     void playSound(QUrl myAudio);
+    int size;
 };
 
 #endif // SEACREATURE_H
