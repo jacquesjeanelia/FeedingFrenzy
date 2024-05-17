@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../Documents/FeedingFrenzy/Feeding Frenzy/player.h"
+#include "../../Feeding Frenzy/player.h"
 #include <QtGui/qtextcursor.h>
 #include <QtGui/qscreen.h>
 #include <QtNetwork/QSslPreSharedKeyAuthenticator>
