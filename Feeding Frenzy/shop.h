@@ -18,6 +18,8 @@ public:
     QGraphicsTextItem * Total = new QGraphicsTextItem;
     button* buybuttons[3] = {nullptr, nullptr, nullptr};
     int intScore;
+    QGraphicsTextItem *message;
+
 public slots:
     void updateScore();
 

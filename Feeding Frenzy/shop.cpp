@@ -43,14 +43,20 @@ shop::shop(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/
     scene->addItem(mainButton);
     Total->setFont(QFont("times", 28));
     Total->setDefaultTextColor(Qt::white);
-    totalFile.open(QIODevice::ReadOnly);
-    totalString = totalIn.readLine();
-    intScore = totalString.toInt();
-    totalFile.close();
-    totalString = QString::number(totalpoints);
-    Total->setPlainText("Total Points: " + totalString);
+    //totalFile.open(QIODevice::ReadOnly);
+    //totalString = totalIn.readLine();
+    //intScore = totalString.toInt();
+    //totalFile.close();
+    //totalString = QString::number(totalpoints);
+    Total->setPlainText("Total Points: " + QString::number(totalpoints));
     Total->setPos(900,50);
     scene->addItem(Total);
+
+    message = new QGraphicsTextItem;
+    message->setFont(QFont("Fantasy",38, QFont::Fantasy));
+    QFont font("Jersey", 25, QFont::DemiBold);
+    message->setFont(font);
+    scene->addItem(message);
 
     QPixmap pixmap1(":/Images/player2 large.png");
     QGraphicsPixmapItem * Fish1 = new QGraphicsPixmapItem;
@@ -123,7 +129,9 @@ shop::shop(QPixmap background): view(QPixmap(background),QUrl("qrc:/new/prefix1/
 void shop::buyItem(int price){
 
     if (totalpoints < price){ //Checks if sufficient points
-        QMessageBox::information(this, "Error", "You do not have sufficent funds");
+        message->setPlainText(QString("YOU DO NOT HAVE SUFFICIENT FUNDS"));
+        message->setDefaultTextColor(Qt::red);
+        message->setPos(300,150);
     } else {
         currentFile.open(QIODevice::WriteOnly);
         ownedFile.open(QIODevice::WriteOnly | QIODevice::Append);
@@ -157,30 +165,37 @@ void shop::buyItem(int price){
         totalString = QString::number(totalpoints);
         totalFile.open(QIODevice::WriteOnly);
         QTextStream totalOut(&totalFile);
-        totalOut<<QString::number(totalpoints);
+        totalOut << QString::number(totalpoints);
         totalFile.close();
         updateScore();
     }
 }
 
 void shop::SelectItem(int price) {
+    QString whichFish = 0;
     currentFile.open(QIODevice::WriteOnly);
     QTextStream currentOut(&currentFile);
     if(price == 50) {
+        whichFish = "2";
         currentOut<<QString::number(1);
     } else if(price == 100) {
         currentOut<<QString::number(2);
+        whichFish = "3";
     } else {
         currentOut<<QString::number(3);
+        whichFish = "4";
     }
-    QMessageBox::information(this, "Fish Selected", "You have successfully selected this fish");
+
+    message->setPlainText(QString("FISH " + whichFish + " SELECTED"));
+    message->setDefaultTextColor(Qt::white);
+    message->setPos(455,150);
+    //scene->addItem(message);
     currentFile.close();
 }
 
 void shop::updateScore()
 {
-    totalString = QString::number(totalpoints);
-    Total->setPlainText("Total Points: "+ totalString);
+    Total->setPlainText("Total Points: "+ QString::number(totalpoints));
 
 }
 

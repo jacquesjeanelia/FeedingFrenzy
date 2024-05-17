@@ -180,8 +180,8 @@ void player::keyPressEvent(QKeyEvent *event)
                         }
                         playSound(QUrl("qrc:/new/prefix1/Audio/level end.mp3"));
                         //score is added to total points
+                        totalFile.open(QIODevice::WriteOnly);
                         totalpoints += myScore->scoreofplayer;
-                        QString totalString = QString::number(totalpoints);
                         totalIn << QString::number(totalpoints);
                         totalFile.close();
                         emit over();

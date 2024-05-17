@@ -64,6 +64,7 @@ int main(int argc, char *argv[])
     QString points = totalIn.readLine();
     totalpoints = points.toInt();
     totalFile.close();
+    qDebug() << totalpoints;
 
     level_1_info = new level_info(1, 20, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/LionfishYellow.png"));
     level_2_info = new level_info(1.3, 40, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/JohnDoryGreen.png"));

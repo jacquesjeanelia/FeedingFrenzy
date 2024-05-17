@@ -1,5 +1,6 @@
 release/button.o
 release/enemy.o
+release/filestream.o
 release/gameover.o
 release/health.o
 release/level.o

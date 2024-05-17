@@ -1,5 +1,6 @@
 debug/button.o
 debug/enemy.o
+debug/filestream.o
 debug/gameover.o
 debug/health.o
 debug/level.o
