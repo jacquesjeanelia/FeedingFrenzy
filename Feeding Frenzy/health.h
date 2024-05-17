@@ -6,12 +6,13 @@ class health:public QGraphicsTextItem
 {
 public:
     health(QGraphicsItem *parent = 0);
-    int healthofplayer = 3;
+    int healthofplayer;
     void decrease();
     int getHealth();
     QGraphicsPixmapItem* Heart1;
     QGraphicsPixmapItem* Heart2;
     QGraphicsPixmapItem* Heart3;
+    QGraphicsPixmapItem* Heart4;
 };
 
 
