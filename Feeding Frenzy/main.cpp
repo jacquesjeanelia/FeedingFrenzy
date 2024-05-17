@@ -46,11 +46,11 @@ int main(int argc, char *argv[])
     //QSplashScreen splash(QPixmap(":/Images/title screen.jpeg"));
     //splash.show();
     //a.processEvents();
-    level_1_info = new level_info(1, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/LionfishYellow.png"));
-    level_2_info = new level_info(1.3, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/JohnDoryGreen.png"));
-    level_3_info = new level_info(1.5, QPixmap(":/Images/RedCod.png"),QPixmap( ":/Images/BasicCod.png"), QPixmap(":/Images/JohnDoryGreen.png"));
-    level_4_info = new level_info(1.7, QPixmap(":/Images/PufferYellow.png"),QPixmap( ":/Images/MarlinBlue.png"), QPixmap(":/Images/TunaBlue.png"));
-    level_5_info = new level_info(1.9, QPixmap(":/Images/BarracudaBlue.png"),QPixmap( ":/Images/TunaBlue Big.png"), QPixmap(":/Images/OrcaPlain.png"));
+    level_1_info = new level_info(1, 20, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/LionfishYellow.png"));
+    level_2_info = new level_info(1.3, 35, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/JohnDoryGreen.png"));
+    level_3_info = new level_info(1.5, 50, QPixmap(":/Images/RedCod.png"),QPixmap( ":/Images/BasicCod.png"), QPixmap(":/Images/JohnDoryGreen.png"));
+    level_4_info = new level_info(1.7, 80, QPixmap(":/Images/PufferYellow.png"),QPixmap( ":/Images/MarlinBlue.png"), QPixmap(":/Images/TunaBlue.png"));
+    level_5_info = new level_info(1.9, 120, QPixmap(":/Images/BarracudaBlue.png"),QPixmap( ":/Images/TunaBlue Big.png"), QPixmap(":/Images/OrcaPlain.png"));
 
     MainMenu =  new mainmenu(QPixmap(":/Images/title screen.png"));
     LevelsMenu = new levels(QPixmap(":/Images/background1.png"));
@@ -129,11 +129,11 @@ int main(int argc, char *argv[])
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), level5, SLOT(Play()));
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), MainMenu, SLOT(mediaStop()));
 
-    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level1, SLOT(Stop()));
-    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level2, SLOT(Stop()));
-    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level3, SLOT(Stop()));
-    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level4, SLOT(Stop()));
-    QObject::connect(victory1->nextButton, SIGNAL(clicked()), level5, SLOT(Stop()));
+    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level1, SLOT(Stop()));
+    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level2, SLOT(Stop()));
+    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level3, SLOT(Stop()));
+    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level4, SLOT(Stop()));
+    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level5, SLOT(Stop()));
 
     QObject::connect(gameover1->tryButton, SIGNAL(clicked()), gameover1, SLOT(hide()));
     QObject::connect(gameover1->tryButton, SIGNAL(clicked()), level1, SLOT(Play()));

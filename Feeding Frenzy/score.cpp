@@ -5,7 +5,7 @@
 
 
 // score in numbers and translated to progress bar
-score::score(QGraphicsItem* parent):QGraphicsRectItem(parent) {
+score::score(int maxScore, QGraphicsItem* parent):QGraphicsRectItem(parent) {
     setRect(200, 35, 800, 40);
     progressBar = new QGraphicsRectItem(this);
     progressBar->setRect(200, 35, 0, 40);
@@ -17,13 +17,11 @@ score::score(QGraphicsItem* parent):QGraphicsRectItem(parent) {
     scoreFont.setBold(true);
     scoreText->setFont(scoreFont);
     scoreText->setPos(200, 3);
+    max = maxScore;
 }
 
 void score::increase(int sizeenemy){
-    scoreofplayer=scoreofplayer+sizeenemy;
-    if (scoreofplayer > 20) {
-        scoreofplayer = 20;
-    }
-    progressBar -> setRect(200, 35, 40*scoreofplayer, 40);
+    scoreofplayer=scoreofplayer + sizeenemy;
+    progressBar -> setRect(200, 35, (800/max)*scoreofplayer, 40);
     scoreText -> setPlainText(QString("Score   ") + QString::number(scoreofplayer));
 }

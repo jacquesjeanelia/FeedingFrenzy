@@ -21,6 +21,8 @@ public:
     void gameOver();
     gameover* Gameover;
     victory* Victory;
+    int max;
+    QTimer *timer;
 
 
 public slots:

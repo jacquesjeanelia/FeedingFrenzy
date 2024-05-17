@@ -16,7 +16,7 @@ class player: public seaCreature
 public:
     player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *myInfo, gameover* myGameOver, victory* myVictory);
     health* myHealth = new health;
-    score* myScore = new score;
+    score* myScore;
     int n = 2;
     int enemyFrequency = 0;
     level_info *Info;
@@ -26,6 +26,7 @@ public:
     bool flipped = false;
     victory* Victory;
     gameover* Gameover;
+    int max;
 
 public slots:
     void createEnemy();

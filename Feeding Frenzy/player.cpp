@@ -6,13 +6,18 @@
 #include <QString>
 #include "enemy.h"
 #include "gameover.h"
+//#include "main.cpp"
 #include "victory.h"
 #include <QFile>
 #include <QDebug>
+#include <QFile>
+
+
+QFile totalFile2("C:\\Users\\jacqu\\Documents\\FeedingFrenzy - Copy\\Feeding Frenzy\totalpoints.txt");
+QFile currentFile3("C:\\Users\\jacqu\\Documents\\FeedingFrenzy - Copy\\Feeding Frenzy\\currentfish.txt");
 
 
 
-//extern level* level1;
 extern gameover* gameover1;
 extern victory* victory1;
 
@@ -24,11 +29,13 @@ player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *m
     large = myLarge;
     size = 1;
     Info = myInfo;
+    max = Info->max;
     setPos(600 - this->boundingRect().width(),350 - this->boundingRect().height());
     setFlag(QGraphicsItem::ItemIsFocusable);
     setFocus();
     Victory = myVictory;
     Gameover = myGameOver;
+    myScore = new score(max);
 
 }
 
@@ -36,16 +43,16 @@ player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *m
 void over()
 {
 }
-void lose()
-{
-
-}
 
 void win()
 {
 
 }
 
+void lose()
+{
+
+}
 
 //keyPress events
 void player::keyPressEvent(QKeyEvent *event)
@@ -87,6 +94,11 @@ void player::keyPressEvent(QKeyEvent *event)
     }
     //collision handling
 
+    QTextStream in2(&currentFile3);
+    currentFile3.open(QIODevice::ReadOnly);
+    QString line = in2.readLine();
+    currentFile3.close();
+
     QList<QGraphicsItem*> collidingitems = collidingItems();
     enemy* list[collidingitems.size()];
     for(int x = 0; x < collidingitems.size(); x++)
@@ -99,10 +111,19 @@ void player::keyPressEvent(QKeyEvent *event)
             // if enemy is smaller
             if(size >= list[x]->size)
             {
-                myScore->increase(list[x]->size);
+                if (line == '3') {
+
+                    myScore->increase(list[x]->size*2);
+                }
+                else
+                {
+                    myScore->increase(list[x]->size);
+                }
+
+
                 int random = rand() % 7;
                 playSound(eatList[random]);
-                if(myScore->scoreofplayer == 3)
+                if((size == 1) && (myScore->scoreofplayer >= (max/4)))
                 {
 
                     playSound(QUrl("qrc:/new/prefix1/Audio/grow up 1.mp3"));
@@ -120,7 +141,7 @@ void player::keyPressEvent(QKeyEvent *event)
                     n++;
 
                 }
-                else if(size == 2 && myScore->scoreofplayer >= 10)
+                else if(size == 2 && myScore->scoreofplayer >= (max/2))
                 {
 
                     {
@@ -136,10 +157,9 @@ void player::keyPressEvent(QKeyEvent *event)
                             setPixmap(large);
                             size++;
                         }
-
                     }
                 }
-                else if(size == 3 && myScore->scoreofplayer >= 19)
+                else if(size == 3 && myScore->scoreofplayer >= max)
                 {
 
                     {
@@ -150,9 +170,10 @@ void player::keyPressEvent(QKeyEvent *event)
 
                         }
                         playSound(QUrl("qrc:/new/prefix1/Audio/level end.mp3"));
-                        //Victory->show();
-                        emit win();
 
+                        emit over();
+                        emit win();
+                        //Victory->show();
 
                     }
                 }
@@ -171,9 +192,10 @@ void player::keyPressEvent(QKeyEvent *event)
                         scene()->items()[x]->hide();
 
                     }
-                    //gameover1->show();
-                    //emit over();
+                    emit over();
                     emit lose();
+                    //Gameover->show();
+
 
 
                 }
@@ -201,10 +223,11 @@ void player::keyPressEvent(QKeyEvent *event)
 //create enemy
 void player::createEnemy()
 {
-
+    if (myHealth->healthofplayer != 0)
+    {
         int random = rand() % n ;
         enemy *Enemy = new enemy(Info->Enemies[random], random+1, Info->difficulty);
         scene()->addItem(Enemy);
-
+    }
 
 }

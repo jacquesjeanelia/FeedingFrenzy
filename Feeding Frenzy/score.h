@@ -6,8 +6,9 @@ class score:public QGraphicsRectItem
 {
 public:
 
-    score(QGraphicsItem* parent=0);
+    score(int maxScore, QGraphicsItem* parent=0);
     int scoreofplayer = 0 ;
+    int max;
     void increase(int);
     void increasebar();
     QGraphicsRectItem* progressBar;

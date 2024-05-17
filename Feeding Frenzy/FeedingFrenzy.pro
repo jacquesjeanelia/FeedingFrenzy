@@ -51,3 +51,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     audio.qrc \
     images.qrc
+
+DISTFILES += \
+    currentfish.txt \
+    ownedfish.txt \
+    totalpoints.txt

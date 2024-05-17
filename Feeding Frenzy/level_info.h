@@ -6,8 +6,9 @@ class level_info
 {
 //    Q_OBJECT
 public:
-    level_info(double myDifficulty, QPixmap myEnemy1, QPixmap myEnemy2, QPixmap myEnemy3);
+    level_info(double myDifficulty, int maxScore, QPixmap myEnemy1, QPixmap myEnemy2, QPixmap myEnemy3);
     double difficulty;
+    int max;
     QPixmap Enemies[3];
 };
 
