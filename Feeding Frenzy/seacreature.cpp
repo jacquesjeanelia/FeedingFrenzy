@@ -3,7 +3,7 @@
 #include <QMediaPlayer>
 
 
-// abstract data type for enemies, and player
+// abstract class for enemies, and player
 seaCreature::seaCreature(){
 
 }

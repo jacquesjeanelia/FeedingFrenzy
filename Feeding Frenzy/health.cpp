@@ -2,8 +2,22 @@
 #include <QDebug>
 #include <QFont>
 #include <QFile>
+#include "filestream.h"
 
-QFile fishoptionn("C:\\Users\\jacqu\\Documents\\FeedingFrenzy - Copy\\Feeding Frenzy\\currentfish.txt");
+extern QString desktop;
+extern QString totalPath;
+extern QString currentPath;
+extern QString ownedPath;
+
+extern QFile totalFile;
+extern QFile currentFile;
+extern QFile ownedFile;
+
+extern QTextStream totalIn;
+extern QTextStream currentIn;
+extern QTextStream ownedIn;
+
+extern int totalpoints;
 
 //health object created in level
 health::health(QGraphicsItem* parent): QGraphicsTextItem(parent) {
@@ -11,10 +25,10 @@ health::health(QGraphicsItem* parent): QGraphicsTextItem(parent) {
     setDefaultTextColor(Qt::red);
     setFont(QFont("Fantasy", 16, QFont::Decorative));
     setPos(1070, 2);
-    QTextStream in2(&fishoptionn);
-    fishoptionn.open(QIODevice::ReadOnly);
-    QString line = in2.readLine();
-    fishoptionn.close();
+    //QTextStream in2(&fishoptionn);
+    currentFile.open(QIODevice::ReadOnly);
+    QString line = currentIn.readLine();
+    currentFile.close();
     QPixmap heart(":/Images/Heart.png"); // Make sure the path is correct
     heart = heart.scaled(50, 50); // You can scale in one step
 

@@ -1,8 +1,9 @@
 #include "button.h"
+#include "seacreature.h"
 #include <QFont>
 
 
-//buttons to switch from screen to screen
+//buttons class
 button::button(QString message, int x, int y) {
 
     this->setRect(0, 0, 200, 100);
@@ -63,18 +64,4 @@ void button::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     brush.setColor(Qt::blue);
     brush.setStyle(Qt::SolidPattern);
     setBrush(brush);
-}
-
-void button::playSound(QUrl myAudio)
-{
-    QUrl audio;
-    QMediaPlayer* mediaPlayer;
-    QAudioOutput * output;
-    audio = myAudio;
-    mediaPlayer = new QMediaPlayer;
-    output = new QAudioOutput;
-    mediaPlayer->setAudioOutput(output);
-    mediaPlayer->setSource(myAudio);
-    output->setVolume(30);
-    mediaPlayer->play();
 }

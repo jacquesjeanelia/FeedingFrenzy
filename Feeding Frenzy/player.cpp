@@ -11,12 +11,22 @@
 #include <QFile>
 #include <QDebug>
 #include <QFile>
+#include "filestream.h"
 
+extern QString desktop;
+extern QString totalPath;
+extern QString currentPath;
+extern QString ownedPath;
 
-QFile totalFile2("C:\\Users\\jacqu\\Documents\\FeedingFrenzy - Copy\\Feeding Frenzy\totalpoints.txt");
-QFile currentFile3("C:\\Users\\jacqu\\Documents\\FeedingFrenzy - Copy\\Feeding Frenzy\\currentfish.txt");
+extern QFile totalFile;
+extern QFile currentFile;
+extern QFile ownedFile;
 
+extern QTextStream totalIn;
+extern QTextStream currentIn;
+extern QTextStream ownedIn;
 
+extern int totalpoints;
 
 extern gameover* gameover1;
 extern victory* victory1;
@@ -36,7 +46,6 @@ player::player(QPixmap mySmall, QPixmap myMedium, QPixmap myLarge, level_info *m
     Victory = myVictory;
     Gameover = myGameOver;
     myScore = new score(max);
-
 }
 
 
@@ -94,10 +103,10 @@ void player::keyPressEvent(QKeyEvent *event)
     }
     //collision handling
 
-    QTextStream in2(&currentFile3);
-    currentFile3.open(QIODevice::ReadOnly);
+    QTextStream in2(&currentFile);
+    currentFile.open(QIODevice::ReadOnly);
     QString line = in2.readLine();
-    currentFile3.close();
+    currentFile.close();
 
     QList<QGraphicsItem*> collidingitems = collidingItems();
     enemy* list[collidingitems.size()];
@@ -163,18 +172,20 @@ void player::keyPressEvent(QKeyEvent *event)
                 {
 
                     {
-                        //gameover code
+                        //victory code
                         for(int x = 0; x< scene()->items().size(); x++)
                         {
                             scene()->items()[x]->hide();
 
                         }
                         playSound(QUrl("qrc:/new/prefix1/Audio/level end.mp3"));
-
+                        //score is added to total points
+                        totalpoints += myScore->scoreofplayer;
+                        QString totalString = QString::number(totalpoints);
+                        totalIn << QString::number(totalpoints);
+                        totalFile.close();
                         emit over();
                         emit win();
-                        //Victory->show();
-
                     }
                 }
                 scene()->removeItem(collidingitems[x]);
@@ -183,6 +194,7 @@ void player::keyPressEvent(QKeyEvent *event)
             // if enemy is bigger
             else
             {
+                //gameover code
                 myHealth->decrease();
                 if (myHealth->healthofplayer == 0)
                 {
@@ -194,14 +206,11 @@ void player::keyPressEvent(QKeyEvent *event)
                     }
                     emit over();
                     emit lose();
-                    //Gameover->show();
-
-
-
                 }
                 else
 
                 {
+                    //lose one life
                     playSound(QUrl("qrc:/new/prefix1/Audio/life lost.mp3"));
 
                     hide();

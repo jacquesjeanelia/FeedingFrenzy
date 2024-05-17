@@ -14,10 +14,12 @@ public:
     button* mainButton;
     void buyItem(int);
     void SelectItem(int);
-    QString ownedFishString;
+    QString totalString;
     QGraphicsTextItem * Total = new QGraphicsTextItem;
     button* buybuttons[3] = {nullptr, nullptr, nullptr};
     int intScore;
+public slots:
+    void updateScore();
 
 };
 

@@ -22,6 +22,7 @@ enemy::enemy(QPixmap myImage, int mySize, double difficulty): seaCreature(myImag
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
+    //speed depending on fish size
     if(size==1)
     {
         timer->start(7/difficulty);

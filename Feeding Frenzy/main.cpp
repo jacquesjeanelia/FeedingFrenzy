@@ -7,6 +7,23 @@
 #include "gameover.h"
 #include "victory.h"
 #include "level_info.h"
+#include <QDebug>
+#include "filestream.h"
+
+extern QString desktop;
+extern QString totalPath;
+extern QString currentPath;
+extern QString ownedPath;
+
+extern QFile totalFile;
+extern QFile currentFile;
+extern QFile ownedFile;
+
+extern QTextStream totalIn;
+extern QTextStream currentIn;
+extern QTextStream ownedIn;
+
+extern int totalpoints;
 
 
 mainmenu *MainMenu;
@@ -41,16 +58,18 @@ level_info* level_5_info;
 
 int main(int argc, char *argv[])
 {
-    //main menu
     QApplication a(argc, argv);
-    //QSplashScreen splash(QPixmap(":/Images/title screen.jpeg"));
-    //splash.show();
-    //a.processEvents();
+
+    totalFile.open(QIODevice::ReadOnly);
+    QString points = totalIn.readLine();
+    totalpoints = points.toInt();
+    totalFile.close();
+
     level_1_info = new level_info(1, 20, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/LionfishYellow.png"));
-    level_2_info = new level_info(1.3, 35, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/JohnDoryGreen.png"));
-    level_3_info = new level_info(1.5, 50, QPixmap(":/Images/RedCod.png"),QPixmap( ":/Images/BasicCod.png"), QPixmap(":/Images/JohnDoryGreen.png"));
+    level_2_info = new level_info(1.3, 40, QPixmap(":/Images/Minnow.png"),QPixmap( ":/Images/BoxFishRed.png"), QPixmap(":/Images/JohnDoryGreen.png"));
+    level_3_info = new level_info(1.5, 60, QPixmap(":/Images/RedCod.png"),QPixmap( ":/Images/BasicCod.png"), QPixmap(":/Images/JohnDoryGreen.png"));
     level_4_info = new level_info(1.7, 80, QPixmap(":/Images/PufferYellow.png"),QPixmap( ":/Images/MarlinBlue.png"), QPixmap(":/Images/TunaBlue.png"));
-    level_5_info = new level_info(1.9, 120, QPixmap(":/Images/BarracudaBlue.png"),QPixmap( ":/Images/TunaBlue Big.png"), QPixmap(":/Images/OrcaPlain.png"));
+    level_5_info = new level_info(1.9, 100, QPixmap(":/Images/BarracudaBlue.png"),QPixmap( ":/Images/TunaBlue Big.png"), QPixmap(":/Images/OrcaPlain.png"));
 
     MainMenu =  new mainmenu(QPixmap(":/Images/title screen.png"));
     LevelsMenu = new levels(QPixmap(":/Images/background1.png"));
@@ -93,7 +112,6 @@ int main(int argc, char *argv[])
     level5 = new level(QPixmap(":/Images/background1.png"), QUrl("qrc:/new/prefix1/Audio/level music 4.mp3"), level_5_info, gameover5, victory5);
 
     MainMenu->show();
-    //splash.finish(m);
 
     // connect the buttons
 
@@ -128,12 +146,6 @@ int main(int argc, char *argv[])
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), LevelsMenu, SLOT(hide()));
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), level5, SLOT(Play()));
     QObject::connect(LevelsMenu->level5Button, SIGNAL(clicked()), MainMenu, SLOT(mediaStop()));
-
-    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level1, SLOT(Stop()));
-    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level2, SLOT(Stop()));
-    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level3, SLOT(Stop()));
-    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level4, SLOT(Stop()));
-    //QObject::connect(victory1->nextButton, SIGNAL(clicked()), level5, SLOT(Stop()));
 
     QObject::connect(gameover1->tryButton, SIGNAL(clicked()), gameover1, SLOT(hide()));
     QObject::connect(gameover1->tryButton, SIGNAL(clicked()), level1, SLOT(Play()));

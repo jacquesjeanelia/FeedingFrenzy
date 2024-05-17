@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     button.cpp \
     enemy.cpp \
+    filestream.cpp \
     gameover.cpp \
     health.cpp \
     level.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 HEADERS += \
     button.h \
     enemy.h \
+    filestream.h \
     gameover.h \
     health.h \
     level.h \
@@ -53,6 +55,5 @@ RESOURCES += \
     images.qrc
 
 DISTFILES += \
-    currentfish.txt \
     ownedfish.txt \
     totalpoints.txt
